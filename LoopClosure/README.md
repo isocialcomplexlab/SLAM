@@ -57,10 +57,16 @@ Videos
 ---
 Results
 =================
+Navigation path in Gazebo office scenario.
+
+<p align="center">
+  <img alt="Scenario" title="#Gazebo Office Scenario" src="./assets/new_scene.png" width="700px">
+</p>
+
 ROC Curve of loop closure detection in Gazebo office scenario.
 
 <p align="center">
-  <img alt="ROCCurve" title="#ROC Curve" src="./assets/roc_curve.pdf" width="700px">
+  <img alt="ROCCurve" title="#ROC Curve" src="./assets/roc_curve.png" width="700px">
 </p>
 
 ---
