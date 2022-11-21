@@ -51,8 +51,9 @@ Grafico3D.ipynb -> Generate positions' graph;
 /artifacts/loop.txt -> Loop closure detected according to the image;
 
 ---
-Videos
+Video
 =================
+Link to YouTube video of the robot navigation in Gazebo-> https://youtu.be/_FArjxUQ7l8
 
 ---
 Results
@@ -70,6 +71,6 @@ ROC Curve of loop closure detection in Gazebo office scenario.
 </p>
 
 ---
-Scholarships Received
+Acknowledgment
 =================
 This work was supported by a Technical Training Fellowship (TT-3/Process Number: 2019/12080-5) funded by the São Paulo Research Foundation (FAPESP)/PIPE Grant Program from July/2019 to December/2020 offered by the Startup NTU Software Technology (Process Number: 2018/04306-0).
