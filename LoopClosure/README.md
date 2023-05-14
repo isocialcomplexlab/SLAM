@@ -30,7 +30,9 @@ Papers
 ## ITNG 2023
 
 Title: Loop Closure Detection in Visual SLAM Based on Convolutional Neural Network
+
 Authors: Fabiana Naomi Iegawa, Wagner Tanaka Botelho, Tamires dos Santos, Edson Pinheiro Pimentel, Flavio Shigeo Yamamoto
+
 link: https://link.springer.com/book/10.1007/978-3-031-28332-1?sap-outbound-id=D653B47018FE3DA2A47097DFE440FA7C63F99813
 
 ---
