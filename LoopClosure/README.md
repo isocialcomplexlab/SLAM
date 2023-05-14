@@ -25,6 +25,15 @@ Student: Fabiana Naomi Iegawa;
 Advisor: Wagner Tanaka Botelho;
 
 ---
+Papers
+=================
+## ITNG 2023
+
+Title: Loop Closure Detection in Visual SLAM Based on Convolutional Neural Network
+Authors: Fabiana Naomi Iegawa, Wagner Tanaka Botelho, Tamires dos Santos, Edson Pinheiro Pimentel, Flavio Shigeo Yamamoto
+link: https://link.springer.com/book/10.1007/978-3-031-28332-1?sap-outbound-id=D653B47018FE3DA2A47097DFE440FA7C63F99813
+
+---
 Files 
 =================
 ## CNN
@@ -50,6 +59,16 @@ Grafico3D.ipynb -> Generate positions' graph;
 
 /artifacts/loop.txt -> Loop closure detected according to the image;
 
+## KITTI
+
+/Group5 -> Results for Group 5 based on each NN (AlexNet, ConvNeXt, ResNet, Original VGG-16, Adapted and Trained VGG-16, and VisionTransformer)
+
+/Group8 -> Results for Group 8 based on each NN (AlexNet, ConvNeXt, ResNet, Original VGG-16, Adapted and Trained VGG-16, and VisionTransformer)
+
+## TUM
+
+Results based on each NN (AlexNet, ConvNeXt, ResNet, Original VGG-16, Adapted and Trained VGG-16, and VisionTransformer)
+
 ---
 Video
 =================
@@ -74,3 +93,4 @@ ROC Curve of loop closure detection in Gazebo office scenario.
 Acknowledgment
 =================
 This work was supported by a Technical Training Fellowship (TT-3/Process Number: 2019/12080-5) funded by the São Paulo Research Foundation (FAPESP)/PIPE Grant Program from July/2019 to December/2020 offered by the Startup NTU Software Technology (Process Number: 2018/04306-0).
+
