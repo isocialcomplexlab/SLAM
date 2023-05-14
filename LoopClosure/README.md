@@ -7,10 +7,11 @@ Content
 =================
 <!--ts-->
    * [Description](#Description)
+   * [Papers](#Papers)
    * [Files](#Files)
    * [Videos](#Videos)
-   * [Results](#Results)
-   * [Scholarships Received](#Scholarships-Received)
+   * [Gazebo Scenario](#Gazebo-Scenario)
+   * [Acknowledgment](#Acknowledgment)
 <!--te-->
 
 ---
@@ -77,7 +78,7 @@ Video
 Link to YouTube video of the robot navigation in Gazebo-> https://youtu.be/_FArjxUQ7l8
 
 ---
-Results
+Gazebo Scenario
 =================
 Navigation path in Gazebo office scenario.
 
