@@ -1,0 +1,8 @@
+prefix=/home/marcelo/code/catkin_ws_tcc/devel
+
+Name: yocs_controllers
+Description: Description of yocs_controllers
+Version: 0.12.1
+Cflags: -I/home/marcelo/code/catkin_ws_tcc/src/yocs_controllers/include
+Libs: -L${prefix}/lib 
+Requires: roscpp
