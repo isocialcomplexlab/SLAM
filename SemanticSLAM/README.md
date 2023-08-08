@@ -60,8 +60,9 @@ Commands
 
 Video
 =================
-Link to Drive video of the robot creating the Semantic Map -> https://youtu.be/_FArjxUQ7l8
-Link to Drive video of the robot identifying items -> https://youtu.be/_FArjxUQ7l8
+Link to Drive video of the robot creating the Semantic Map -> https://drive.google.com/file/d/1T8cZ7BktdDcCe3n0qGPH2e25vP84JJrH/view?usp=sharing
+
+Link to Drive video of the robot identifying items -> https://drive.google.com/file/d/15lYBVN2JegtCuEjIow-zf3Mya9Rivq8e/view?usp=sharing
 
 ---
 Semantic Map
