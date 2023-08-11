@@ -40,7 +40,7 @@ Files
 ## Semantic Map Data
 `/script/labs.csv` -> Contains information related to the semantic map, in addition to prohibited and mandatory items for each laboratory;
 
-`/rtabmap.db` -> File with the information that RTAB-Map uses to create the semantic map*. [Download Here](https://drive.google.com/file/d/1FqmFN3MPoF-1U2lYamiu10YHtx2_1Sbv/view?usp=sharing));
+`/rtabmap.db` -> File with the information that RTAB-Map uses to create the semantic map* ([Download Here](https://drive.google.com/file/d/1FqmFN3MPoF-1U2lYamiu10YHtx2_1Sbv/view?usp=sharing));
 
 *by default it should be in `/home/use/.ros/`. If you want to create the map from scratch, the file must be deleted.
 
