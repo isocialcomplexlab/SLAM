@@ -1,81 +1,87 @@
 
 
+
+
 <h1 align="center"> 
-	Semantic SLAM System
+	Sistema de SLAM Semântico
 </h1>
 
 
-Content
+Sumário
 =================
 <!--ts-->
-   * [Description](#Description)
-   * [Files](#Files)
-   * [Commands](#Commands)
-   * [Videos](#Videos)
-   * [Gazebo Scenario](#Gazebo-Scenario)
+   * [Descrição](#Descrição)
+   * [Arquivos](#Arquivos)
+   * [Comandos](#Comandos)
+   * [Vídeos](#Vídeos)
 <!--te-->
 
 ---
-Description 
+Descrição
 =================
-Graduation Project in Computing at the Federal University of ABC;
+Projeto de Graduação em Computação - Universidade Federal do ABC;
 
-Title of Work: Study and Implementation of Semantic SLAM for Recognition of Personal Protective Equipment in a Simulated Environment;
+Título do Trabalho: Estudo e Implementação de SLAM Semântico para Reconhecimento de Equipamentos de Proteção Individual em Ambiente Simulado;
 
-Student: Marcelo Tranche de Souza Junior;
+Estudante: Marcelo Tranche de Souza Junior;
 
-Advisor: Wagner Tanaka Botelho;
+Orientador: Wagner Tanaka Botelho;
 
-Files 
+Arquivos 
 =================
 ## YOLO
-`/script/yolov5/` -> Codes used (and adapted) from the [YOLO repository](https://github.com/ultralytics/yolov5);
+`/script/yolov5/` -> Códigos utilizados (e adaptados) do [repositório do YOLO](https://github.com/ultralytics/yolov5);
 
-`/script/yolov5/runs/train/model/weights/best.pt` -> Model weights used in the work;
+`/script/yolov5/runs/train/model/weights/best.pt` -> Pesos do modelo utilizados no trabalho;
 
 ## Scripts
-`/script/save_image.py` -> Saves the images captured by TurtleBot (Python2 required, preferably python 2.7);
+`/script/save_image.py` -> Salva as imagens capturadas pela câmera do TurtleBot (Requer Python2, preferencialmente Python 2.7);
 
-`/script/semantic_info.py` -> Identify objects and items with YOLO (Python3 required, preferably python 3.6);
+`/script/semantic_info.py` -> Identifica os objetos e itens com o YOLO (Requer Python3, preferencialmente python 3.6, além das bibliotecas em `requirements.txt`);
 
-## Semantic Map Data
-`/script/labs.csv` -> Contains information related to the semantic map, in addition to prohibited and mandatory items for each laboratory[^1];
+## Dados do Mapa Semântico
+`/script/labs.csv` -> Contém informações do mapa semântico, e também os itens proibidos e obrigatórios de cada laboratório[^1];
 
-`/rtabmap.db` -> File with the information that RTAB-Map uses to create the semantic map[^2] ([Download Here](https://drive.google.com/file/d/1FqmFN3MPoF-1U2lYamiu10YHtx2_1Sbv/view?usp=sharing));
+`/rtabmap.db` -> Arquivo com informações que o RTAB-Map utiliza para criar o mapa semântico[^2] ([Download aqui](https://drive.google.com/file/d/1FqmFN3MPoF-1U2lYamiu10YHtx2_1Sbv/view?usp=sharing));
 
-[^1]: If you want to create the semantic map from scratch, remove the coordinates information (t_x, t_y, p_x, p_y);
-[^2]: By default it should be in `/home/user/.ros/`. If you want to create the semantic map from scratch, the file must be deleted.
+[^1]: Se quiser criar um novo mapa semântico, remova as informações de coordenadas do `labs.csv` (t_x, t_y, p_x, p_y);
+[^2]: Por padrão, `rtabmap.db` deve estar em `/home/user/.ros/`. Se quiser criar um novo mapa semântico, o arquivo não deve estar na pasta.
 
 ## Dataset
-Dataset used to train YOLO: [https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior](https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior)
+Dataset utilizado para treinar o YOLO: [https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior](https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior)
 
 ---
-Commands 
+Comandos
 =================
 
-    source devel/setup.bash #Source the catkins files
-    roslaunch turtlebot_gazebo blocoA_andar3.launch #Start simulated environment
-    roslaunch turtlebot_teleop keyboard_teleop.launch #Launch TurtleBot keyboard control
-    roslaunch rtabmap_ros demo_turtlebot_mapping.launch simulation:=true #Starts the RTAB-Map library
-    roslaunch rtabmap_ros demo_turtlebot_rviz.launch #Starts the visualization of the semantic map in RVIZ (Enable 'MarkerArray' to view lab markers)
+    source devel/setup.bash #Source arquivos do catkins
+    roslaunch turtlebot_gazebo blocoA_andar3.launch #Inicia ambiente simulado
+    roslaunch turtlebot_teleop keyboard_teleop.launch #Inicia controle do TurtleBot pelo teclado
+    roslaunch rtabmap_ros demo_turtlebot_mapping.launch simulation:=true #Inicia a biblioteca RTAB-Map
+    roslaunch rtabmap_ros demo_turtlebot_rviz.launch #Inicia visualização do mapa semântico no RVIZ (Ative o 'MarkerArray' para visualizar os marcadores dos laboratórios)
     cd script/
-    python save_image.py #Starts saving captured images
-    python3 semantic_info.py #Starts identifying objects and items
+    python save_image.py #Começa a salvar as imagens capturadas pelo robô
+    python3 semantic_info.py #Começa a identificar os objetos e itens
 ---
-
-Video
-=================
-Video of the robot creating the semantic map -> [https://youtu.be/ehB-ZsAkj9M](https://youtu.be/ehB-ZsAkj9M)
-
-Video of the robot identifying items -> [https://youtu.be/jXHsONd9CPM](https://youtu.be/jXHsONd9CPM)
-
----
-Semantic Map
-=================
-Complete semantic map of the simulated environment.
 
 <p align="center">
-  <img alt="Semantic Map" title="#Semantic Map" src="./assets/semantic_map.png" width="700px">
+  <img alt="Mapa Semântico" title="#Mapa Semântico" src="./assets/marker_enable.png" width="500px">
+</p>
+
+
+Vídeos
+=================
+Vídeo do robô criando o mapa semântico -> [https://youtu.be/ehB-ZsAkj9M](https://youtu.be/ehB-ZsAkj9M)
+
+Video do robô identificando itens -> [https://youtu.be/jXHsONd9CPM](https://youtu.be/jXHsONd9CPM)
+
+---
+Mapa Semântico
+=================
+Mapa semântico completo do ambiente simulado.
+
+<p align="center">
+  <img alt="Mapa Semântico" title="#Mapa Semântico" src="./assets/semantic_map.png" width="700px">
 </p>
 
 
