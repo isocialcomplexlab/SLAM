@@ -17,6 +17,24 @@ import cv2
 
 import time
 
+import argparse
+
+parser = argparse.ArgumentParser(add_help=True)
+
+parser.add_argument('-diou', '--doors-iou-threshold', type=float, default=0.85,
+                    help='Threshold de IoU para identificar portas')
+
+parser.add_argument('-dconf', '--doors-confidence-threshold', type=float, default=0.85,
+                    help='Threshold de confiança para identificar portas')
+
+parser.add_argument('-itiou', '--items-iou-threshold', type=float, default=0.25,
+                    help='Threshold de IoU para identificar itens')
+
+parser.add_argument('-itconf', '--items-confidence-threshold', type=float, default=0.25,
+                    help='Threshold de confiança para identificar itens')
+
+args = parser.parse_args()
+
 MODEL = './yolov5/runs/train/model/weights/best.pt'
 
 # Calculates Distance
@@ -257,7 +275,9 @@ class SemanticInfo(object):
 
     # Search Items in the Database
     def get_items(self, lab):
-        print(self.df.loc[self.df['lab_num'] == lab]['itens_obrig'].str.split(','))
+        print('Itens Obrigatorios:', self.df.loc[self.df['lab_num'] == lab].iloc[-1]['itens_obrig'])
+        print('Itens Proibidos:', self.df.loc[self.df['lab_num'] == lab].iloc[-1]['itens_proib'])
+
         obr_items = [int(float(x)) for x in self.df.loc[self.df['lab_num'] == lab]['itens_obrig'].str.split(',').iloc[0]]
         proi_items = [int(float(x)) for x in self.df.loc[self.df['lab_num'] == lab]['itens_proib'].str.split(',').iloc[0]]
 
@@ -297,9 +317,7 @@ class SemanticInfo(object):
         min_lab = -1
         for door in self.df[~(pd.isna(self.df['p_x']))].to_dict('records'): 
             dist = get_dist(door['p_x'], self.pose['x'] + x, door['p_y'], self.pose['y'] + y)
-            print('DISTANCIA PORTA:')
-            print(dist)
-            if dist < 2.0 and dist < min_dist:
+            if dist < 1.5 and dist < min_dist:
                 min_dist = dist
                 min_lab = door['lab_num']
         return min_lab
@@ -308,8 +326,6 @@ class SemanticInfo(object):
     def check_door_distance_to_mark(self):
         for door in self.df[~(pd.isna(self.df['p_x']))].to_dict('records'): 
             dist = get_dist(door['t_x'], self.pose['x'], door['t_y'], self.pose['y'])
-            print('DISTANCIA:')
-            print(dist)
             if dist < 1.5:
                 return False
         return True
@@ -367,6 +383,18 @@ class SemanticInfo(object):
 
     
 if __name__ == '__main__':
+    doors_iou_threshold = args.doors_iou_threshold
+    doors_confidence_threshold = args.doors_confidence_threshold
+    items_iou_threshold = args.items_iou_threshold
+    items_confidence_threshold = args.items_confidence_threshold
+
+    if (doors_iou_threshold >= 1.0 or doors_iou_threshold <= 0.01 or
+        doors_confidence_threshold >= 1.0 or doors_confidence_threshold <= 0.01 or
+        items_iou_threshold >= 1.0 or items_iou_threshold <= 0.01 or
+        items_confidence_threshold >= 1.0 or items_confidence_threshold <= 0.01):
+
+        raise argparse.ArgumentTypeError("Argumentos devem estar entre 0.02 e 0.99")
+    
     img_path = 'images/camera_image.jpeg'
 
     si = SemanticInfo()
@@ -389,8 +417,8 @@ if __name__ == '__main__':
             boxes, im0 = inference(classes = [2], 
                                     source = img_path, 
                                     weights = MODEL, 
-                                    conf_thres = 0.85, 
-                                    iou_thres = 0.85)
+                                    conf_thres = doors_confidence_threshold, 
+                                    iou_thres = doors_iou_threshold)
         except:
             continue
         
@@ -415,14 +443,13 @@ if __name__ == '__main__':
                     med = med - 320
                  
                 closest_lab = si.check_close_door(dists[320 + int(med)], med/640)
-                closest_lab = 1
                 if closest_lab != -1:
                     res = ''
-                    while res not in ['s', 'n']:
+                    while res not in ['s', 'n', 'S', 'N']:
                         print('Você está próximo ao laboratório '+ str(closest_lab) + ', começar a identificar pessoas? (S/N)')
                         res = input()
 
-                    if res == 's':
+                    if res == 's' or res == 'S':
                         while True:
                             objs = si.get_items(int(closest_lab))
                             classes = objs['obrig'] + objs['proib'] + [4, 8]
@@ -431,8 +458,8 @@ if __name__ == '__main__':
                                 people_boxes, im_people = inference(classes = classes,
                                                                     source = img_path,
                                                                     weights = MODEL,
-                                                                    conf_thres = 0.25,
-                                                                    iou_thres = 0.25)                   
+                                                                    conf_thres = items_confidence_threshold,
+                                                                    iou_thres = items_iou_threshold)                   
                             except:
                                 continue
 
@@ -461,7 +488,7 @@ if __name__ == '__main__':
 
                                     time.sleep(5.0)
 
-                    elif res == 'n':
+                    elif res == 'n' or res == 'N':
                         break
 
                 if si.check_door_distance_to_mark():
@@ -469,14 +496,14 @@ if __name__ == '__main__':
                     while int(lab) not in list(si.df['lab_num']):
                         print('Qual laboratório foi detectado?')
                         lab = input()
-                        if lab =='n':
+                        if lab =='n' or lab =='N':
                             break
 
                     res = ''
-                    if lab != 'n':
+                    if lab != 'n' and lab != 'N':
                         si.add_door(int(lab), dists[320 + int(med)], med/640)
 
-                        while res not in ['s', 'n']:
+                        while res not in ['s', 'n', 'S', 'N']:
                             print('Começar a identificar pessoas? (S/N)')
                             res = input()
                         
@@ -484,14 +511,13 @@ if __name__ == '__main__':
                             while True:
                                 objs = si.get_items(int(lab))
                                 classes = objs['obrig'] + objs['proib'] + [4, 8]
-                                print(classes)
 
                                 try:
                                     people_boxes, im_people = inference(classes = classes,
                                                                         source = img_path,
                                                                         weights = MODEL,
-                                                                        conf_thres = 0.5,
-                                                                        iou_thres = 0.5)                                
+                                                                        conf_thres = items_confidence_threshold,
+                                                                        iou_thres = items_iou_threshold)                                
                                 
                                 except:
                                     continue
