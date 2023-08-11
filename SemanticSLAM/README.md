@@ -1,4 +1,5 @@
 
+
 <h1 align="center"> 
 	Semantic SLAM System
 </h1>
@@ -38,11 +39,12 @@ Files
 `/script/semantic_info.py` -> Identify objects and items with YOLO (Python3 required, preferably python 3.6);
 
 ## Semantic Map Data
-`/script/labs.csv` -> Contains information related to the semantic map, in addition to prohibited and mandatory items for each laboratory;
+`/script/labs.csv` -> Contains information related to the semantic map, in addition to prohibited and mandatory items for each laboratory[^1];
 
-`/rtabmap.db` -> File with the information that RTAB-Map uses to create the semantic map* ([Download Here](https://drive.google.com/file/d/1FqmFN3MPoF-1U2lYamiu10YHtx2_1Sbv/view?usp=sharing));
+`/rtabmap.db` -> File with the information that RTAB-Map uses to create the semantic map[^2] ([Download Here](https://drive.google.com/file/d/1FqmFN3MPoF-1U2lYamiu10YHtx2_1Sbv/view?usp=sharing));
 
-*by default it should be in `/home/use/.ros/`. If you want to create the map from scratch, the file must be deleted.
+[^1]: If you want to create the semantic map from scratch, remove the coordinates information (t_x, t_y, p_x, p_y);
+[^2]: By default it should be in `/home/use/.ros/`. If you want to create the semantic map from scratch, the file must be deleted.
 
 ## Dataset
 Dataset used to train YOLO: [https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior](https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior)
