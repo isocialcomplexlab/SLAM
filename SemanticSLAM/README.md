@@ -38,6 +38,8 @@ Arquivos
 `/script/save_image.py` -> Salva as imagens capturadas pela câmera do TurtleBot (Requer Python2, preferencialmente Python 2.7);
 
 `/script/semantic_info.py` -> Identifica os objetos e itens com o YOLO (Requer Python3, preferencialmente python 3.6, além das bibliotecas em `requirements.txt`);
+      
+`python3 semantic_info.py --help` -> Lista os argumentos que podem ser passados para o script;
 
 ## Dados do Mapa Semântico
 `/script/labs.csv` -> Contém informações do mapa semântico, e também os itens proibidos e obrigatórios de cada laboratório[^1];
