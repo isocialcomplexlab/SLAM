@@ -40,9 +40,12 @@ Files
 ## Semantic Map Data
 `/script/labs.csv` -> Contains information related to the semantic map, in addition to prohibited and mandatory items for each laboratory;
 
-`/rtabmap.db` -> File with the information that RTAB-Map uses to create the semantic map*;
+`/rtabmap.db` -> File with the information that RTAB-Map uses to create the semantic map*. [Download Here](https://drive.google.com/file/d/1FqmFN3MPoF-1U2lYamiu10YHtx2_1Sbv/view?usp=sharing));
 
 *by default it should be in `/home/use/.ros/`. If you want to create the map from scratch, the file must be deleted.
+
+## Dataset
+Dataset used to train YOLO: [https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior](https://universe.roboflow.com/pgcmarcelo-tranche-junior/pgc-marcelo-tranche-junior)
 
 ---
 Commands 
@@ -60,9 +63,9 @@ Commands
 
 Video
 =================
-Link to Drive video of the robot creating the Semantic Map -> https://drive.google.com/file/d/1T8cZ7BktdDcCe3n0qGPH2e25vP84JJrH/view?usp=sharing
+Link to Drive video of the robot creating the Semantic Map -> [https://youtu.be/ehB-ZsAkj9M](https://youtu.be/ehB-ZsAkj9M)
 
-Link to Drive video of the robot identifying items -> https://drive.google.com/file/d/15lYBVN2JegtCuEjIow-zf3Mya9Rivq8e/view?usp=sharing
+Link to Drive video of the robot identifying items -> [https://youtu.be/jXHsONd9CPM](https://youtu.be/jXHsONd9CPM)
 
 ---
 Semantic Map
