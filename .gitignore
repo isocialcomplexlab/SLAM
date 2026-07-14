@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large datasets and generated descriptors
+/data/
+/datasets/
+**/datasets/
+**/dataset_downloads/
+**/descriptors/
+**/tensors_generated/
+*.npy
+*.npz
+*.parquet
+*.pt
+*.pth
+*.ckpt
+
+# Generated results (keep small final CSV/JSON files by force-adding when needed)
+results/**/*.png
+results/**/*.pdf
+results/**/*.svg
+results/**/*.log
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/*.toc
+paper/*.lof
+paper/*.lot
+paper/*.xdv
+paper/_minted-*/
+
+# Temporary files
+*.tmp
+*.bak
+~$*
