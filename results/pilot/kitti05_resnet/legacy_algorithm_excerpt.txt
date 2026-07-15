@@ -1,0 +1,110 @@
+    [
+        transforms.Resize((256,256)),
+        #transforms.RandomRotation(10),
+        transforms.Lambda(crop_l),
+        transforms.ToTensor(),
+        transforms.Normalize((0.36, 0.36, 0.36), (0.28, 0.28, 0.28))
+    ])
+
+================================================================================
+CELL 2 — code
+================================================================================
+train_path = '/content/drive/MyDrive/Datasets/KITTI/05'
+batch_size = 1
+
+train_r = datasets.ImageFolder(train_path, transform_right)
+train_l = datasets.ImageFolder(train_path, transform_left)
+
+train_loader_r = torch.utils.data.DataLoader(train_r, batch_size)
+train_loader_l = torch.utils.data.DataLoader(train_l, batch_size)
+
+
+================================================================================
+CELL 7 — code
+================================================================================
+for n_it in range(1,55):
+  output_ = []
+  output_new = []
+  try:
+    if n_it == 1:
+      min_ = 0
+    else:
+      min_ = (n_it-1)*100
+    max_ = n_it*100
+    aux_ = min_ +1
+    output_ = rightpt(train_loader_r, min_, max_, aux_)
+    output_new = leftpt(train_loader_l, min_, max_, aux_, output_)
+    out_path = '/content/drive/MyDrive/Datasets/tensors_kitti_05_resnet/tensors'+str(n_it)+'.pt'
+    torch.save(output_new,out_path)
+  except:
+    print('error')
+
+
+================================================================================
+CELL 10 — code
+================================================================================
+def match(cam_img, db_img, dist_limit):
+    distance = torch.cdist(cam_img, db_img, p=2)
+    max_dist = torch.max(distance)
+    if max_dist <= dist_limit:
+        return True
+    
+    return False
+
+================================================================================
+CELL 13 — code
+================================================================================
+co = 0
+for bg in database:
+  co += 1
+  for i,data in enumerate(bg):
+    if i < 3:
+      d.append(data)
+    else:
+      loop_ = belief_generation(d, data)
+      if loop_ > 0:
+        with open('/content/drive/MyDrive/Datasets/KITTI/loop_kitti_05_resnet_v2.txt', 'a') as txt_file:
+          txt_file.write('\n Found loop')
+          image_number = round(((co*100)+i)/2,0)
+          txt_file.write('\n image: '+str(image_number))
+      else:
+        d.append(data)
+  
+
+
+
+================================================================================
+CELL 14 — code
+================================================================================
+import pandas as pd
+
+df = pd.read_csv('/content/drive/MyDrive/Datasets/metricas/kitti_05_resnet_v2.csv')
+
+
+================================================================================
+CELL 15 — code
+================================================================================
+from sklearn.metrics import RocCurveDisplay
+import matplotlib.pyplot as plt
+
+
+RocCurveDisplay.from_predictions(df['actual'], df['pred'])
+plt.show()
+
+================================================================================
+CELL 16 — code
+================================================================================
+from sklearn.metrics import roc_auc_score, accuracy_score, f1_score
+
+
+print('AUC: ',roc_auc_score(df['actual'], df['pred']))
+print('Accuracy: ',accuracy_score(df['actual'], df['pred']))
+print('f1: ',f1_score(df['actual'], df['pred']))
+
+
+================================================================================
+CELL 17 — code
+================================================================================
+from sklearn.metrics import confusion_matrix
+
+confusion_matrix(df['actual'], df['pred'])

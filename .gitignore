@@ -10,13 +10,11 @@ venv/
 
 # Jupyter
 .ipynb_checkpoints/
-
 # IDE / OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-
 # Large datasets and generated descriptors
 /data/
 /datasets/
@@ -30,13 +28,11 @@ Thumbs.db
 *.pt
 *.pth
 *.ckpt
-
 # Generated results (keep small final CSV/JSON files by force-adding when needed)
 results/**/*.png
 results/**/*.pdf
 results/**/*.svg
 results/**/*.log
-
 # LaTeX build artifacts
 paper/*.aux
 paper/*.bbl
@@ -51,8 +47,13 @@ paper/*.lof
 paper/*.lot
 paper/*.xdv
 paper/_minted-*/
-
 # Temporary files
 *.tmp
 *.bak
 ~$*
+# Local dataset paths
+.env.local
+# Dataset downloads and partial transfers
+*.aria2
+data_odometry_*.zip
+# Local datasets and partial downloads

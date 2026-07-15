@@ -1,0 +1,7 @@
+notebook,binary_roc,binary_auc,absolute_colab_path,hard_coded_threshold,three_sequence_logic
+LoopClosure/KITTI/Group5/KITTI_05_alexnet.ipynb,1,1,4,0,1
+LoopClosure/KITTI/Group5/KITTI_05_convnext.ipynb,1,1,4,0,1
+LoopClosure/KITTI/Group5/KITTI_05_resnet.ipynb,1,1,4,0,1
+LoopClosure/KITTI/Group5/KITTI_05_vgg16_adaptada_treinada.ipynb,1,1,5,0,1
+LoopClosure/KITTI/Group5/KITTI_05_vgg16_original.ipynb,1,1,4,0,1
+LoopClosure/KITTI/Group5/KITTI_05_visiontransformer.ipynb,1,1,4,0,1
