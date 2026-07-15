@@ -1,0 +1,4 @@
+dataset,sequence,spatial_radius_m,temporal_exclusion_frames,event_id,query_start,query_end,query_count,reference_start,reference_end,positive_pairs,minimum_distance_m,median_distance_m,maximum_distance_m,median_heading_difference_deg,same_direction_pairs,oblique_pairs,opposite_direction_pairs
+KITTI_odometry,05,5.0,100,1,1292,1564,273,526,813,3985,0.023971024175044566,2.6825474180338302,4.998661351958244,2.1114575717224398,3585,400,0
+KITTI_odometry,05,5.0,100,2,2412,2520,109,14,143,1269,0.13327026525073202,2.843508093664575,4.999220894068302,1.434449946475695,1173,96,0
+KITTI_odometry,05,5.0,100,3,2571,2636,66,792,1567,1296,0.17394701529201534,2.986663528760912,4.997284534389197,8.373211310231483,935,361,0

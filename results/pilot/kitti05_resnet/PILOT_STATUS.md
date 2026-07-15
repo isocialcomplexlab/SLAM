@@ -69,3 +69,38 @@ The official KITTI odometry sequence 05 was validated using an automated
 dataset checker. Images, ground-truth poses, and timestamps are aligned by
 frame index. A relative-path manifest was generated for reproducible
 descriptor extraction and ground-truth construction.
+
+## Pose-based revisit sensitivity analysis
+
+A preliminary sensitivity analysis was introduced to evaluate how the number
+of ground-truth revisit pairs varies with the spatial radius and temporal
+exclusion.
+
+The analysis uses the KITTI x-z ground plane and evaluates spatial radii of
+2, 5, and 10 meters, together with temporal exclusions of 30, 50, 100, and
+200 frames.
+
+These values are not yet the final evaluation protocol. They will be used to
+select and justify the ground-truth definition before descriptor extraction.
+Heading differences will subsequently be stored as metadata so that
+same-direction and opposite-traversal conditions can be analyzed separately.
+
+## Revisit-event analysis
+
+Using a 5 m positive radius and a 100-frame temporal exclusion, KITTI 05
+contains three detected revisit events and 6,550 positive frame pairs.
+
+Traversal-direction distribution:
+
+- same direction: 5,693 pairs;
+- oblique: 857 pairs;
+- opposite direction: 0 pairs.
+
+The third event cannot be considered independent from the first event because
+its reference-frame interval overlaps the first event's reference and query
+intervals. Its query interval is also temporally close to the second event.
+
+For the pilot only, event 1 will be used for threshold calibration, event 2
+for primary testing, and event 3 as an overlap/stress diagnostic. The final
+paper protocol must prefer cross-sequence calibration to avoid same-sequence
+leakage.
