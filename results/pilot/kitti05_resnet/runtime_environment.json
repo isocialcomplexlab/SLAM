@@ -1,0 +1,10 @@
+{
+  "python_version": "3.12.3",
+  "platform": "Linux-4.4.0-19041-Microsoft-x86_64-with-glibc2.39",
+  "pytorch_version": "2.13.0+cpu",
+  "torchvision_version": "0.28.0+cpu",
+  "device": "cpu",
+  "cuda_available": false,
+  "pytorch_cuda_version": null,
+  "cpu_threads": 4
+}
