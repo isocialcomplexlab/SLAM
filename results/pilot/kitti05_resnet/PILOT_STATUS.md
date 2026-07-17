@@ -104,3 +104,15 @@ For the pilot only, event 1 will be used for threshold calibration, event 2
 for primary testing, and event 3 as an overlap/stress diagnostic. The final
 paper protocol must prefer cross-sequence calibration to avoid same-sequence
 leakage.
+
+## Leakage-aware pilot split
+
+The three KITTI 05 revisit events were partitioned by complete events:
+
+- calibration: event 1, 3,985 positive pairs;
+- test: event 2, 1,269 positive pairs;
+- stress diagnostic: event 3, 1,296 positive pairs.
+
+Calibration and test share no query or reference frames. The stress diagnostic
+shares 49 frames with calibration and is therefore explicitly marked as
+non-independent. It will not be included in the primary test metrics.
