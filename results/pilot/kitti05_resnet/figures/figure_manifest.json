@@ -1,0 +1,61 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "split": "test",
+  "evaluation_level": "descriptor_L1",
+  "ambiguous_pairs": "excluded_from_binary_metrics",
+  "methods": [
+    "legacy_exact",
+    "corrected_l2"
+  ],
+  "metrics": {
+    "legacy_exact": {
+      "positive_prevalence": 0.09773567467652496,
+      "roc_auc": 0.730510243446014,
+      "pr_auc": 0.4588570530683186,
+      "average_precision": 0.45897141665253427
+    },
+    "corrected_l2": {
+      "positive_prevalence": 0.09773567467652496,
+      "roc_auc": 0.824498102592199,
+      "pr_auc": 0.5938392561559989,
+      "average_precision": 0.5939180403879499
+    }
+  },
+  "sources": [
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/metrics_summary.csv",
+      "sha256": "839f31b05bbd62bc6b5085135b4e62fbd404880bbc4a40dd3171b22ff6abc715"
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_legacy_exact_roc.csv",
+      "sha256": "8068a43f80bf014ec590421db239204353f3e933b667d1e295da2ea37a10fb22"
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_corrected_l2_roc.csv",
+      "sha256": "1a002520eca72a8d1783153c553d666e9d20c343e3f0a22f34614fe03ee27012"
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_legacy_exact_pr.csv",
+      "sha256": "213f302505e0e6ac52ca7cf3863c25d97d88cf95e80f914b94e67ccb25e3460b"
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_corrected_l2_pr.csv",
+      "sha256": "a604517e5746663cfb8f3007c69b7f32a68354d87db45b723924c8fda8a6ee7b"
+    }
+  ],
+  "figures": [
+    {
+      "path": "results/pilot/kitti05_resnet/figures/roc_curve.pdf",
+      "type": "roc",
+      "sha256": "14478b315da00af51ebda601462ff906d86394e4862c52c869bf97ff671c1acb",
+      "size_bytes": 41389
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/figures/precision_recall_curve.pdf",
+      "type": "precision_recall",
+      "sha256": "50d59c51d340be07cd6eefaf86d7beeff39b93abc1a1136fa6d370c2b2ae8c41",
+      "size_bytes": 41275
+    }
+  ]
+}

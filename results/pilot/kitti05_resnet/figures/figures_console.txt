@@ -1,0 +1,6 @@
+Figuras geradas:
+  ROC: results/pilot/kitti05_resnet/figures/roc_curve.pdf
+  PR : results/pilot/kitti05_resnet/figures/precision_recall_curve.pdf
+  Manifesto: results/pilot/kitti05_resnet/figures/figure_manifest.json
+  roc: 41389 bytes, SHA-256=14478b315da00af51ebda601462ff906d86394e4862c52c869bf97ff671c1acb
+  precision_recall: 41275 bytes, SHA-256=50d59c51d340be07cd6eefaf86d7beeff39b93abc1a1136fa6d370c2b2ae8c41
