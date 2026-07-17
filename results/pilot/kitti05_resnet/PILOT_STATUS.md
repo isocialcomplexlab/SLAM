@@ -116,3 +116,24 @@ The three KITTI 05 revisit events were partitioned by complete events:
 Calibration and test share no query or reference frames. The stress diagnostic
 shares 49 frames with calibration and is therefore explicitly marked as
 non-independent. It will not be included in the primary test metrics.
+
+## Candidate-pair generation
+
+Complete event-local query-reference Cartesian products were generated using:
+
+- positive: spatial distance less than or equal to 5 m;
+- ambiguous: spatial distance greater than 5 m and less than 10 m;
+- negative: spatial distance greater than or equal to 10 m.
+
+Results:
+
+- calibration: 78,624 candidates, 3,985 positives, 3,572 ambiguous,
+  and 71,067 negatives;
+- test: 14,170 candidates, 1,269 positives, 1,186 ambiguous,
+  and 11,715 negatives;
+- stress: 9,636 candidates, 1,296 positives, 1,226 ambiguous,
+  and 7,114 negatives.
+
+Ambiguous pairs are retained for auditing but excluded from the primary binary
+metrics. All original positive pairs were preserved exactly, and calibration
+and test share no frames.

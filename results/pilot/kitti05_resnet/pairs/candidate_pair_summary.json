@@ -1,0 +1,97 @@
+{
+  "dataset": "KITTI_odometry",
+  "sequence": "05",
+  "camera": "image_0",
+  "protocol": {
+    "positive_radius_m": 5.0,
+    "ambiguous_interval_m": "(5.0, 10.0)",
+    "negative_radius_m": 10.0,
+    "temporal_exclusion_frames": 100,
+    "candidate_strategy": "full Cartesian product of the query and reference frames belonging to each complete revisit event",
+    "ambiguous_policy": "retained for audit and excluded from primary binary metrics"
+  },
+  "inputs": {
+    "split_config": "configs/experiments/kitti05_resnet_pilot_split.json",
+    "split_config_sha256": "63c491b5931d78141e69d686b9d56f5b98fffaf6399eabd3991ec66ee58ee4c3",
+    "positive_split_checksums": {
+      "calibration_positive_pairs.csv": "995c951a442307c1ed0b36fc2319456ac1843cf780a2738db7a3e68a79606441",
+      "test_positive_pairs.csv": "ca840424afd6f922c21b932a4f636669dbde19c333ede5e6f3eb1197650f2b26",
+      "stress_positive_pairs.csv": "b2161fac8c3434783df1da51ae04216015257c5e742dedb742b669e0e28c02f1"
+    }
+  },
+  "splits": {
+    "calibration": {
+      "source_file": "results/pilot/kitti05_resnet/splits/calibration_positive_pairs.csv",
+      "output_file": "calibration_pairs.csv",
+      "query_frames": 273,
+      "reference_frames": 288,
+      "candidate_pairs": 78624,
+      "positive_pairs": 3985,
+      "ambiguous_pairs": 3572,
+      "negative_pairs": 71067,
+      "binary_evaluation_pairs": 75052,
+      "positive_prevalence_excluding_ambiguous": 0.053096519746309224,
+      "traversal_classes": {
+        "oblique": 5949,
+        "same_direction": 72675
+      },
+      "positive_preservation": {
+        "source_positive_pairs": 3985,
+        "generated_positive_pairs": 3985,
+        "missing_positive_pairs": 0,
+        "extra_positive_pairs": 0
+      },
+      "output_sha256": "af9c15bd0b4a9647568729fe8bf56f8c225a17c5ceb4ff85c5adad6d545914bf"
+    },
+    "test": {
+      "source_file": "results/pilot/kitti05_resnet/splits/test_positive_pairs.csv",
+      "output_file": "test_pairs.csv",
+      "query_frames": 109,
+      "reference_frames": 130,
+      "candidate_pairs": 14170,
+      "positive_pairs": 1269,
+      "ambiguous_pairs": 1186,
+      "negative_pairs": 11715,
+      "binary_evaluation_pairs": 12984,
+      "positive_prevalence_excluding_ambiguous": 0.09773567467652496,
+      "traversal_classes": {
+        "oblique": 1415,
+        "same_direction": 12755
+      },
+      "positive_preservation": {
+        "source_positive_pairs": 1269,
+        "generated_positive_pairs": 1269,
+        "missing_positive_pairs": 0,
+        "extra_positive_pairs": 0
+      },
+      "output_sha256": "61358a6acafc75424fa76068e30a020a4bad219d25a859b44cfe7b564e86c0c2"
+    },
+    "stress": {
+      "source_file": "results/pilot/kitti05_resnet/splits/stress_positive_pairs.csv",
+      "output_file": "stress_pairs.csv",
+      "query_frames": 66,
+      "reference_frames": 146,
+      "candidate_pairs": 9636,
+      "positive_pairs": 1296,
+      "ambiguous_pairs": 1226,
+      "negative_pairs": 7114,
+      "binary_evaluation_pairs": 8410,
+      "positive_prevalence_excluding_ambiguous": 0.15410225921521997,
+      "traversal_classes": {
+        "oblique": 3301,
+        "same_direction": 6335
+      },
+      "positive_preservation": {
+        "source_positive_pairs": 1296,
+        "generated_positive_pairs": 1296,
+        "missing_positive_pairs": 0,
+        "extra_positive_pairs": 0
+      },
+      "output_sha256": "f10f9b7671b46ea401158c9d9c42d63f50029aee7cde2c3f9402bb67e0abe3b3"
+    }
+  },
+  "independence_checks": {
+    "calibration_test_frame_overlap_count": 0,
+    "calibration_test_frame_overlap": []
+  }
+}
