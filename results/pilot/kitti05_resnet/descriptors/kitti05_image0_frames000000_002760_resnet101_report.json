@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "dataset": "KITTI odometry",
+  "sequence": "05",
+  "sequence_root": "/home/wagner/datasets/KITTI_odometry/extracted/dataset/sequences/05",
+  "camera_id": "image_0",
+  "start_frame": 0,
+  "end_frame": 2760,
+  "sample_count": 2761,
+  "weights": "ResNet101_Weights.IMAGENET1K_V1",
+  "device": "cpu",
+  "output_file": "results/pilot/kitti05_resnet/descriptors/kitti05_image0_frames000000_002760_resnet101_imagenet1k_v1.npz",
+  "output_sha256": "67420407e00f61d654cba2eee249610cf9d57ba91f1db43f7ff0ae284ac6e7a5",
+  "validation": {
+    "descriptor_shape": [
+      2761,
+      4096
+    ],
+    "descriptor_dtype": "float32",
+    "all_finite": true,
+    "minimum": 0.0,
+    "maximum": 14.840571403503418,
+    "mean": 0.442646861076355,
+    "standard_deviation": 0.6013167500495911,
+    "unique_identity_count": 2761,
+    "first_frame_id": 0,
+    "last_frame_id": 2760,
+    "first_image_path": "/home/wagner/datasets/KITTI_odometry/extracted/dataset/sequences/05/image_0/000000.png",
+    "last_image_path": "/home/wagner/datasets/KITTI_odometry/extracted/dataset/sequences/05/image_0/002760.png"
+  },
+  "timing_seconds": {
+    "model_creation": 1.023467600112781,
+    "descriptor_extraction": 494.2649739999324,
+    "serialization": 2.8976541999727488,
+    "total": 499.01675840001553,
+    "seconds_per_frame": 0.179016651213304,
+    "frames_per_second": 5.586072542539455
+  },
+  "peak_process_rss_kib": 738752,
+  "model": {
+    "training": false,
+    "parameter_count": 44549160
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Linux-4.4.0-19041-Microsoft-x86_64-with-glibc2.39",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "pillow": "12.3.0",
+    "numpy": "2.5.1"
+  }
+}

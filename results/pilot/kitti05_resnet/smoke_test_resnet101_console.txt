@@ -1,0 +1,23 @@
+===============================================================================
+SMOKE TEST REAL — KITTI 05 / RESNET-101
+===============================================================================
+Imagem      : /home/wagner/datasets/KITTI_odometry/extracted/dataset/sequences/05/image_0/000000.png
+Dispositivo : cpu
+Pesos       : ResNet101_Weights.IMAGENET1K_V1
+
+RESULTADO
+- status                 : passed
+- shape                  : [4096]
+- dtype                  : torch.float32
+- valores finitos        : True
+- requires_grad          : False
+- modelo em training     : False
+- norma L2               : 50.77882385
+- tempo de criação       : 1.219248 s
+- tempo de extração      : 0.154469 s
+- pico RSS               : 700644 KiB
+- SHA-256                : 3c269aad5d210e51adce69895fcffcf7456a7d3c55c81e3f6d8f476a65abb06b
+
+Descritor salvo em: results/pilot/kitti05_resnet/smoke/kitti05_image0_frame000000_resnet101_imagenet1k_v1.npy
+Relatório salvo em : results/pilot/kitti05_resnet/smoke/kitti05_image0_frame000000_resnet101_smoke.json
+===============================================================================

@@ -1,0 +1,66 @@
+===============================================================================
+AUDITORIA DA ORDEM DO IMAGEFOLDER — KITTI 05
+===============================================================================
+KITTI_ODOMETRY_ROOT : /home/wagner/datasets/KITTI_odometry/extracted/dataset
+Raiz da sequência   : /home/wagner/datasets/KITTI_odometry/extracted/dataset/sequences/05
+Classes imediatas   : ['image_0', 'image_1']
+Total de amostras   : 5522
+
+CONTAGEM POR CLASSE
+- image_0: 2761 imagens; índices 0..2760; frames 0..2760
+- image_1: 2761 imagens; índices 2761..5521; frames 0..2760
+
+IMAGEFOLDER REAL
+{
+  "constructed_successfully": true,
+  "classes": [
+    "image_0",
+    "image_1"
+  ],
+  "class_to_idx": {
+    "image_0": 0,
+    "image_1": 1
+  },
+  "sample_count": 5522,
+  "matches_reproduced_order": true
+}
+
+TRANSIÇÕES ENTRE CLASSES
+- índice 2760 (image_0/002760.png) -> índice 2761 (image_1/000000.png)
+
+ALINHAMENTO IMAGE_0 / IMAGE_1
+{
+  "image_0_frame_count": 2761,
+  "image_1_frame_count": 2761,
+  "shared_frame_count": 2761,
+  "only_image_0_count": 0,
+  "only_image_1_count": 0,
+  "image_0_before_image_1": true
+}
+
+PARES ADJACENTES COM MESMO FRAME E CÂMERAS DIFERENTES: 0
+
+PRIMEIRAS 12 AMOSTRAS
+     0 | image_0      | frame=     0 | image_0/000000.png
+     1 | image_0      | frame=     1 | image_0/000001.png
+     2 | image_0      | frame=     2 | image_0/000002.png
+     3 | image_0      | frame=     3 | image_0/000003.png
+     4 | image_0      | frame=     4 | image_0/000004.png
+     5 | image_0      | frame=     5 | image_0/000005.png
+     6 | image_0      | frame=     6 | image_0/000006.png
+     7 | image_0      | frame=     7 | image_0/000007.png
+     8 | image_0      | frame=     8 | image_0/000008.png
+     9 | image_0      | frame=     9 | image_0/000009.png
+    10 | image_0      | frame=    10 | image_0/000010.png
+    11 | image_0      | frame=    11 | image_0/000011.png
+
+AMOSTRAS NAS FRONTEIRAS ENTRE CLASSES
+  2758 | image_0      | frame=  2758 | image_0/002758.png
+  2759 | image_0      | frame=  2759 | image_0/002759.png
+  2760 | image_0      | frame=  2760 | image_0/002760.png
+  2761 | image_1      | frame=     0 | image_1/000000.png
+  2762 | image_1      | frame=     1 | image_1/000001.png
+  2763 | image_1      | frame=     2 | image_1/000002.png
+
+Relatório JSON salvo em: results/pilot/kitti05_resnet/imagefolder_order_audit.json
+===============================================================================

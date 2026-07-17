@@ -1,0 +1,26 @@
+===============================================================================
+EXTRAÇÃO RESNET-101 — KITTI 05
+===============================================================================
+Sequência       : /home/wagner/datasets/KITTI_odometry/extracted/dataset/sequences/05
+Câmera          : image_0
+Frames          : 0..9
+Amostras        : 10
+Dispositivo     : cpu
+Pesos           : ResNet101_Weights.IMAGENET1K_V1
+Arquivo de saída: results/pilot/kitti05_resnet/descriptors/kitti05_image0_frames000000_000009_resnet101_imagenet1k_v1.npz
+
+RESULTADO
+- status                 : passed
+- shape                  : [10, 4096]
+- valores finitos        : True
+- identidades únicas     : 10
+- primeiro frame         : 0
+- último frame           : 9
+- tempo de extração      : 1.490602 s
+- segundos por frame     : 0.149060
+- pico RSS               : 705404 KiB
+- SHA-256 do NPZ         : 28caf7b7373a5d8e8fa441a0967c17d13f60865a8102b54f3023d9f44a02328f
+
+Descritores: results/pilot/kitti05_resnet/descriptors/kitti05_image0_frames000000_000009_resnet101_imagenet1k_v1.npz
+Relatório  : results/pilot/kitti05_resnet/descriptors/kitti05_image0_frames000000_000009_resnet101_report.json
+===============================================================================
