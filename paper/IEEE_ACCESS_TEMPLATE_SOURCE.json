@@ -1,0 +1,318 @@
+{
+  "source": "IEEE Access official LaTeX template",
+  "official_url": "https://ieeeaccess.ieee.org/wp-content/uploads/2026/05/ACCESS_latex_template_20260513-1-1.zip",
+  "retrieved_at_utc": "2026-07-17T20:40:45.712501+00:00",
+  "files": [
+    {
+      "filename": "IEEEtran.cls",
+      "source_relative_path": "ACCESS_latex_template_20260513/IEEEtran.cls",
+      "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
+      "size_bytes": 281957,
+      "action": "already-identical"
+    },
+    {
+      "filename": "bullet.png",
+      "source_relative_path": "ACCESS_latex_template_20260513/bullet.png",
+      "sha256": "754772e36aab389556f98c14f5deeb4031e792b68a766dc5f9766e76e114fffc",
+      "size_bytes": 430,
+      "action": "copied"
+    },
+    {
+      "filename": "ieeeaccess.cls",
+      "source_relative_path": "ACCESS_latex_template_20260513/ieeeaccess.cls",
+      "sha256": "67b73c4da05479d592a9449c38a81fcc7779d78753085bb44199e7f2746b757d",
+      "size_bytes": 50800,
+      "action": "already-identical"
+    },
+    {
+      "filename": "spotcolor.sty",
+      "source_relative_path": "ACCESS_latex_template_20260513/spotcolor.sty",
+      "sha256": "a9c5bacbf5b832e5eac61393bf1b330fc75fa353cbc9cf4319c227de49bfa5fa",
+      "size_bytes": 2231,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-bold.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-bold.pfb",
+      "sha256": "85cc7db8dc04090411600cfb2853bb2efe92a8dc3c406e57ba11fd21248e607b",
+      "size_bytes": 59944,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-bold.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-bold.tfm",
+      "sha256": "07d3efeaf10af3eb2c15cc00ef16629cee96df315d0551984fce5b7f67cf8ee3",
+      "size_bytes": 1420,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-bolditalic.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-bolditalic.pfb",
+      "sha256": "51af5f6d5ae0c69597cf68e4f3f0a1b222ae1f8fe014f248379e3162d783a8da",
+      "size_bytes": 57834,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-bolditalic.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-bolditalic.tfm",
+      "sha256": "edba8f3a19f9ccc6c3fc2b99aabb108d88ca16188cc110c34dba01716553f005",
+      "size_bytes": 1672,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-condmedium.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-condmedium.pfb",
+      "sha256": "21d1c9853f4c1d1975c13541629e9977380dd61cb461de130dd22f181f60c749",
+      "size_bytes": 63989,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-condmedium.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-condmedium.tfm",
+      "sha256": "6b50cfdac0503850bd1042e6f81a5bc7106732b71a6e7382083290e8d28ae3d4",
+      "size_bytes": 1412,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-condmediumital.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-condmediumital.pfb",
+      "sha256": "2b9c7803d3d79d86ec2fe84785a2c5e92db7f8ea01f59ae4d4be19d806e4bc4b",
+      "size_bytes": 65644,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-condmediumital.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-condmediumital.tfm",
+      "sha256": "bdcc73dd762e6345daf132d476845eda1f87a72e900203e43afb721626e2baae",
+      "size_bytes": 1660,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-italic.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-italic.pfb",
+      "sha256": "774a9b0f146bdc4fa3bfe366cc70a0c357f3a33095cc30f41622823a1514ce4e",
+      "size_bytes": 55897,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-italic.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-italic.tfm",
+      "sha256": "b5abe759c73ab5f6c7130b11a1c58e793dc2d329affe8fc82583b97ef6acec3e",
+      "size_bytes": 1680,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-light.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-light.pfb",
+      "sha256": "e172485ed2369cd310b4510ed1175272c9a25e978c7d9394887d5258b3e22b69",
+      "size_bytes": 62934,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-light.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-light.tfm",
+      "sha256": "e49ec9919a791c4db785743997fbdf6a1896c4820028ef6cf7460a6326bab6bd",
+      "size_bytes": 1416,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-lightitalic.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-lightitalic.pfb",
+      "sha256": "e1e8b533ef124f9ce1e845031b67a4b71ed4ec283c784217b8383d18629c5efe",
+      "size_bytes": 56817,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-lightitalic.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-lightitalic.tfm",
+      "sha256": "faf7c6e83e68da1342bbcba422021e18bc936292e25fc43ce2705e8cc3724dda",
+      "size_bytes": 1656,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-medium.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-medium.pfb",
+      "sha256": "86bcb9f9047a23d192e46b85af6ac50a3f557dd81bcb57bb77fe10fbd2c4f7a7",
+      "size_bytes": 67701,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-medium.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-medium.tfm",
+      "sha256": "06bbc55cb560d7f16e3821f739756db3dcced3543542cfca79790cdaf7918b9d",
+      "size_bytes": 4720,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-mediumitalic.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-mediumitalic.pfb",
+      "sha256": "81675003831e33e5e4f708d6d3ee6db81c0ec0da241a083e9457cc83fdd73df4",
+      "size_bytes": 62483,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-mediumitalic.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-mediumitalic.tfm",
+      "sha256": "6af7b2d27109a2aeb09a6775974d67b0c78f4acdbc23e072138e0b69f39cb53d",
+      "size_bytes": 4948,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-regsymb.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-regsymb.pfb",
+      "sha256": "28b3e632d96f651dbbd9f5225ed362f0506279513cf7ecb0785506bb77573c4f",
+      "size_bytes": 14621,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-regsymb.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-regsymb.tfm",
+      "sha256": "2099220084353dd2414b1e47156b6b4745cfa94d8cf7a737c519f8e47d8d9cc2",
+      "size_bytes": 432,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-regular.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-regular.pfb",
+      "sha256": "ddda54f35e3b59effa5bc0782bfc75b971d4503e3d643888e12ef8cf0a5c259c",
+      "size_bytes": 63982,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata-regular.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata-regular.tfm",
+      "sha256": "5b72c4ed7ea54027bfd6206b35898e3d531372f9810b4a1d35325fa4a9bed95f",
+      "size_bytes": 1416,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-formata.map",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-formata.map",
+      "sha256": "6bc40400c9d3e827bc8c9243699e5681fe2fd385aa58f1c010c0bb62db8ac7b4",
+      "size_bytes": 690,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-giovannistd-bookitalic.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-giovannistd-bookitalic.pfb",
+      "sha256": "98ad0803de1518d803e7c6b339196f2a6907cf22b1a18475284c26a0d230a84f",
+      "size_bytes": 60827,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-giovannistd-bookitalic.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-giovannistd-bookitalic.tfm",
+      "sha256": "35669a03bfac8239f2c9aeb234c3d258fb3c8773add552fa79c21d0e8eaf77ce",
+      "size_bytes": 5452,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-giovannistd.map",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-giovannistd.map",
+      "sha256": "3b53bc7de8bce199c2b5cb5a7e0b0dd4625a8f15f3ab50ba6b550fc497b0ba37",
+      "size_bytes": 81,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-helvetica.map",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-helvetica.map",
+      "sha256": "4cb73edb6c8f800aabedf7c69791cafd3df90dc04ef73d334b4f92cccb47d485",
+      "size_bytes": 253,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times-bold.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times-bold.pfb",
+      "sha256": "9de3b06aee8a29697b10861f1d4f4fff11568f5629ed2d03bfa82ff0d244c682",
+      "size_bytes": 74023,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times-bold.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times-bold.tfm",
+      "sha256": "4c845739e4c4b74bd3314d191781ed5bfad3005e568376186ff3be72e4007a2b",
+      "size_bytes": 6264,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times-bolditalic.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times-bolditalic.pfb",
+      "sha256": "2bc33058718a7bce6defaa09a5c2684e410117baec62937da0b1952c66bf6452",
+      "size_bytes": 63189,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times-bolditalic.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times-bolditalic.tfm",
+      "sha256": "2fdc98c536dc5e4c10948496450ae2afe5d221c3063c65d4b5d2322ef05ecc65",
+      "size_bytes": 5328,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times-italic.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times-italic.pfb",
+      "sha256": "8b291a54d50d0064621726d947d013743c097ddb6e0dca7704fedec65f6adda5",
+      "size_bytes": 59460,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times-italic.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times-italic.tfm",
+      "sha256": "1a7a52a19b83939973e9a46a1615ca5b01b826670b77631c9e97313e325a6aa0",
+      "size_bytes": 6284,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times.map",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times.map",
+      "sha256": "34315863a8b07b692262ef6489a0cd2fab0e1c7ee2979379a3ab488dde62a1a9",
+      "size_bytes": 215,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times.pfb",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times.pfb",
+      "sha256": "d7a1e71f532e430ecb31b0f70fdc3c13e6d952371899649ba70821ddc2aee3e8",
+      "size_bytes": 76176,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1-times.tfm",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1-times.tfm",
+      "sha256": "5c8fb592c16a481b6594dc5edfa62ef24db5d233a1e57f36f502e2d0f79c1a20",
+      "size_bytes": 5932,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1formata.fd",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1formata.fd",
+      "sha256": "87385e77266d505e48556523732275185b9540ff06fb87b78ec5dc122346b10e",
+      "size_bytes": 706,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1giovannistd.fd",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1giovannistd.fd",
+      "sha256": "e071d747b940f03a238ee82c85b84be9991086ed2a487e4e6293a2185c0fc0a3",
+      "size_bytes": 115,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1helvetica.fd",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1helvetica.fd",
+      "sha256": "5ee12b5ba0ac6ad044218568bc38a9d706e3d1b842559dd3c4c625b0cfbf7012",
+      "size_bytes": 592,
+      "action": "already-identical"
+    },
+    {
+      "filename": "t1times.fd",
+      "source_relative_path": "ACCESS_latex_template_20260513/t1times.fd",
+      "sha256": "257f290ea4e57bd9bcbaf22bdfeb1b17ada22d92e4b543d56625044302708e3b",
+      "size_bytes": 508,
+      "action": "already-identical"
+    }
+  ],
+  "archive_sha256": "60c7efc9db8ac9e8bdb31c550ad4e03cb6f258a878ececc0bc690b6203e45a67",
+  "archive_size_bytes": 1942796,
+  "last_updated_at_utc": "2026-07-17T20:46:35.084486+00:00"
+}
