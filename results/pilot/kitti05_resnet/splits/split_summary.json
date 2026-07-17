@@ -1,0 +1,86 @@
+{
+  "dataset": "KITTI_odometry",
+  "sequence": "05",
+  "camera": "image_0",
+  "protocol": {
+    "spatial_radius_m": 5.0,
+    "temporal_exclusion_frames": 100,
+    "event_assignments": {
+      "calibration": [
+        1
+      ],
+      "test": [
+        2
+      ],
+      "stress": [
+        3
+      ]
+    },
+    "rationale": {
+      "calibration": "Event 1 is used only for pilot threshold calibration.",
+      "test": "Event 2 shares no frames with Event 1 and is used for primary pilot evaluation.",
+      "stress": "Event 3 overlaps Event 1 and is retained only as a non-independent diagnostic."
+    },
+    "final_protocol_note": "Final experiments should prefer cross-sequence calibration."
+  },
+  "inputs": {
+    "events_csv": "results/pilot/kitti05_resnet/revisit_events_r5_t100.csv",
+    "events_csv_sha256": "778e078311b48bbbffa42a4b4ab5460d83f2386c1971e14133e65579ec4759a5",
+    "positive_pairs_csv": "results/pilot/kitti05_resnet/positive_pairs_r5_t100.csv",
+    "positive_pairs_csv_sha256": "7035a0695e51af95d69fcb09fda1f1fd93a3dc49069691f1704fed5a7960ab24",
+    "config_json": "configs/experiments/kitti05_resnet_pilot_split.json",
+    "config_json_sha256": "63c491b5931d78141e69d686b9d56f5b98fffaf6399eabd3991ec66ee58ee4c3"
+  },
+  "outputs": {
+    "calibration": "calibration_positive_pairs.csv",
+    "test": "test_positive_pairs.csv",
+    "stress": "stress_positive_pairs.csv"
+  },
+  "splits": {
+    "calibration": {
+      "event_ids": [
+        1
+      ],
+      "positive_pairs": 3985,
+      "unique_query_frames": 273,
+      "unique_reference_frames": 288,
+      "unique_all_frames": 561,
+      "query_frame_min": 1292,
+      "query_frame_max": 1564,
+      "reference_frame_min": 526,
+      "reference_frame_max": 813
+    },
+    "test": {
+      "event_ids": [
+        2
+      ],
+      "positive_pairs": 1269,
+      "unique_query_frames": 109,
+      "unique_reference_frames": 130,
+      "unique_all_frames": 239,
+      "query_frame_min": 2412,
+      "query_frame_max": 2520,
+      "reference_frame_min": 14,
+      "reference_frame_max": 143
+    },
+    "stress": {
+      "event_ids": [
+        3
+      ],
+      "positive_pairs": 1296,
+      "unique_query_frames": 66,
+      "unique_reference_frames": 146,
+      "unique_all_frames": 212,
+      "query_frame_min": 2571,
+      "query_frame_max": 2636,
+      "reference_frame_min": 792,
+      "reference_frame_max": 1567
+    }
+  },
+  "independence_checks": {
+    "calibration_test_frame_overlap_count": 0,
+    "calibration_test_frame_overlap": [],
+    "calibration_stress_frame_overlap_count": 49,
+    "test_stress_frame_overlap_count": 0
+  }
+}

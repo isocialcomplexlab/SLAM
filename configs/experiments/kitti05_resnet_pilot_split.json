@@ -1,0 +1,18 @@
+{
+  "dataset": "KITTI_odometry",
+  "sequence": "05",
+  "camera": "image_0",
+  "spatial_radius_m": 5.0,
+  "temporal_exclusion_frames": 100,
+  "event_assignments": {
+    "calibration": [1],
+    "test": [2],
+    "stress": [3]
+  },
+  "rationale": {
+    "calibration": "Event 1 is used only for pilot threshold calibration.",
+    "test": "Event 2 shares no frames with Event 1 and is used for primary pilot evaluation.",
+    "stress": "Event 3 overlaps Event 1 and is retained only as a non-independent diagnostic."
+  },
+  "final_protocol_note": "Final experiments should prefer cross-sequence calibration."
+}
