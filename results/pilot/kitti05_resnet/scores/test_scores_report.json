@@ -1,0 +1,55 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "camera_id": "image_0",
+  "split": "test",
+  "descriptor_model": "resnet101_imagenet1k_v1",
+  "descriptor_dimension": 4096,
+  "descriptor_file": "results/pilot/kitti05_resnet/descriptors/kitti05_image0_frames000000_002760_resnet101_imagenet1k_v1.npz",
+  "descriptor_sha256": "67420407e00f61d654cba2eee249610cf9d57ba91f1db43f7ff0ae284ac6e7a5",
+  "pairs_file": "results/pilot/kitti05_resnet/pairs/test_pairs.csv",
+  "pairs_sha256": "61358a6acafc75424fa76068e30a020a4bad219d25a859b44cfe7b564e86c0c2",
+  "scores_file": "results/pilot/kitti05_resnet/scores/test_scores.csv",
+  "scores_sha256": "710304721dcd9479d7e60eb894d78bed3802b4c7ba8e824346a7ed1ab8ebda8c",
+  "row_count": 14170,
+  "unique_pair_count": 14170,
+  "class_counts": {
+    "positive": 1269,
+    "ambiguous": 1186,
+    "negative": 11715
+  },
+  "binary_row_count": 12984,
+  "ambiguous_row_count": 1186,
+  "score_semantics": {
+    "legacy_exact_distance": "L-infinity/Chebyshev; smaller is more similar",
+    "legacy_exact_score": "negative L-infinity distance; larger is more similar",
+    "corrected_l2_distance": "Euclidean L2; smaller is more similar",
+    "corrected_l2_score": "negative Euclidean distance; larger is more similar"
+  },
+  "ground_truth_definition": {
+    "positive": "spatial_distance_m <= 5.0",
+    "ambiguous": "5.0 < spatial_distance_m < 10.0",
+    "negative": "spatial_distance_m >= 10.0"
+  },
+  "score_ranges": {
+    "legacy_exact_distance": {
+      "minimum": 0.768369197845459,
+      "maximum": 8.444059610366821
+    },
+    "legacy_exact_score": {
+      "minimum": -8.444059610366821,
+      "maximum": -0.768369197845459
+    },
+    "corrected_l2_distance": {
+      "minimum": 8.97244856699373,
+      "maximum": 48.79236136891119
+    },
+    "corrected_l2_score": {
+      "minimum": -48.79236136891119,
+      "maximum": -8.97244856699373
+    }
+  },
+  "elapsed_seconds": 0.9191409999039024,
+  "pairs_per_second": 15416.568297444564,
+  "output_size_bytes": 3795235
+}

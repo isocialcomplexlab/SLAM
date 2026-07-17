@@ -1,0 +1,7 @@
+split,method,threshold_source_split,threshold,true_positive,false_positive,true_negative,false_negative
+calibration,legacy_exact,calibration,-2.7038474082946777,1382,1180,69887,2603
+calibration,corrected_l2,calibration,-21.821827426452618,1715,632,70435,2270
+test,legacy_exact,calibration,-2.7038474082946777,411,228,11487,858
+test,corrected_l2,calibration,-21.821827426452618,427,42,11673,842
+stress,legacy_exact,calibration,-2.7038474082946777,260,181,6933,1036
+stress,corrected_l2,calibration,-21.821827426452618,290,134,6980,1006

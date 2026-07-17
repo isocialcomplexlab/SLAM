@@ -1,0 +1,37 @@
+Carregando descritores: results/pilot/kitti05_resnet/descriptors/kitti05_image0_frames000000_002760_resnet101_imagenet1k_v1.npz
+Descritores carregados: 2761
+
+Iniciando split: calibration
+[calibration] 5000/78624 pares — 15012.2 pares/s
+[calibration] 10000/78624 pares — 15560.2 pares/s
+[calibration] 15000/78624 pares — 15149.8 pares/s
+[calibration] 20000/78624 pares — 15237.5 pares/s
+[calibration] 25000/78624 pares — 15208.9 pares/s
+[calibration] 30000/78624 pares — 15525.2 pares/s
+[calibration] 35000/78624 pares — 15591.4 pares/s
+[calibration] 40000/78624 pares — 15788.3 pares/s
+[calibration] 45000/78624 pares — 15739.2 pares/s
+[calibration] 50000/78624 pares — 15765.3 pares/s
+[calibration] 55000/78624 pares — 15797.3 pares/s
+[calibration] 60000/78624 pares — 15783.3 pares/s
+[calibration] 65000/78624 pares — 15811.9 pares/s
+[calibration] 70000/78624 pares — 15802.0 pares/s
+[calibration] 75000/78624 pares — 15783.8 pares/s
+[calibration] concluído: 78624 pares, 4.990 s, 15755.1 pares/s
+
+Iniciando split: test
+[test] 5000/14170 pares — 16187.2 pares/s
+[test] 10000/14170 pares — 15984.2 pares/s
+[test] concluído: 14170 pares, 0.919 s, 15416.6 pares/s
+
+Iniciando split: stress
+[stress] 5000/9636 pares — 13835.7 pares/s
+[stress] concluído: 9636 pares, 0.734 s, 13131.3 pares/s
+
+===============================================================================
+GERAÇÃO CONCLUÍDA
+===============================================================================
+Total de pares: 102430
+Pares binários: 96446
+Pares ambíguos: 5984
+Resumo: results/pilot/kitti05_resnet/scores/pair_scores_summary.json

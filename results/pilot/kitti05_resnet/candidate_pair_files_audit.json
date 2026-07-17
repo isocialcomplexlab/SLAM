@@ -1,0 +1,703 @@
+{
+  "root": "results/pilot/kitti05_resnet",
+  "all_csv_files": [
+    "results/pilot/kitti05_resnet/kitti05_manifest.csv",
+    "results/pilot/kitti05_resnet/notebook_audit.csv",
+    "results/pilot/kitti05_resnet/pairs/calibration_pairs.csv",
+    "results/pilot/kitti05_resnet/pairs/stress_pairs.csv",
+    "results/pilot/kitti05_resnet/pairs/test_pairs.csv",
+    "results/pilot/kitti05_resnet/positive_pairs_r5_t100.csv",
+    "results/pilot/kitti05_resnet/revisit_events_r5_t100.csv",
+    "results/pilot/kitti05_resnet/revisit_summary.csv",
+    "results/pilot/kitti05_resnet/splits/calibration_positive_pairs.csv",
+    "results/pilot/kitti05_resnet/splits/stress_positive_pairs.csv",
+    "results/pilot/kitti05_resnet/splits/test_positive_pairs.csv"
+  ],
+  "candidate_file_count": 7,
+  "candidate_files": [
+    {
+      "path": "results/pilot/kitti05_resnet/pairs/calibration_pairs.csv",
+      "size_bytes": 14465205,
+      "columns": [
+        "dataset",
+        "sequence",
+        "camera",
+        "split",
+        "pair_id",
+        "query_frame",
+        "reference_frame",
+        "query_image_path",
+        "reference_image_path",
+        "temporal_separation_frames",
+        "spatial_distance_m",
+        "heading_difference_deg",
+        "traversal_class",
+        "pair_class",
+        "binary_label"
+      ],
+      "row_count": 78624,
+      "detected_columns": {
+        "query": "query_frame",
+        "reference": "reference_frame",
+        "label": "binary_label",
+        "split_or_event": "split",
+        "distance": "spatial_distance_m"
+      },
+      "label_counts": {
+        "": 3572,
+        "0": 71067,
+        "1": 3985
+      },
+      "split_counts": {
+        "calibration": 78624
+      },
+      "numeric_ranges": {
+        "query_frame": {
+          "minimum": 1292.0,
+          "maximum": 1564.0
+        },
+        "reference_frame": {
+          "minimum": 526.0,
+          "maximum": 813.0
+        },
+        "spatial_distance_m": {
+          "minimum": 0.023971024,
+          "maximum": 221.033369282
+        }
+      },
+      "unique_pair_count": 78624,
+      "duplicate_pair_count": 0,
+      "first_rows": [
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "calibration",
+          "pair_id": "05_001292_000526",
+          "query_frame": "1292",
+          "reference_frame": "526",
+          "query_image_path": "sequences/05/image_0/001292.png",
+          "reference_image_path": "sequences/05/image_0/000526.png",
+          "temporal_separation_frames": "766",
+          "spatial_distance_m": "6.618603993",
+          "heading_difference_deg": "132.459736751",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "calibration",
+          "pair_id": "05_001292_000527",
+          "query_frame": "1292",
+          "reference_frame": "527",
+          "query_image_path": "sequences/05/image_0/001292.png",
+          "reference_image_path": "sequences/05/image_0/000527.png",
+          "temporal_separation_frames": "765",
+          "spatial_distance_m": "6.254420549",
+          "heading_difference_deg": "129.460200256",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "calibration",
+          "pair_id": "05_001292_000528",
+          "query_frame": "1292",
+          "reference_frame": "528",
+          "query_image_path": "sequences/05/image_0/001292.png",
+          "reference_image_path": "sequences/05/image_0/000528.png",
+          "temporal_separation_frames": "764",
+          "spatial_distance_m": "5.909444130",
+          "heading_difference_deg": "126.345429119",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        }
+      ]
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/pairs/stress_pairs.csv",
+      "size_bytes": 1716200,
+      "columns": [
+        "dataset",
+        "sequence",
+        "camera",
+        "split",
+        "pair_id",
+        "query_frame",
+        "reference_frame",
+        "query_image_path",
+        "reference_image_path",
+        "temporal_separation_frames",
+        "spatial_distance_m",
+        "heading_difference_deg",
+        "traversal_class",
+        "pair_class",
+        "binary_label"
+      ],
+      "row_count": 9636,
+      "detected_columns": {
+        "query": "query_frame",
+        "reference": "reference_frame",
+        "label": "binary_label",
+        "split_or_event": "split",
+        "distance": "spatial_distance_m"
+      },
+      "label_counts": {
+        "": 1226,
+        "0": 7114,
+        "1": 1296
+      },
+      "split_counts": {
+        "stress": 9636
+      },
+      "numeric_ranges": {
+        "query_frame": {
+          "minimum": 2571.0,
+          "maximum": 2636.0
+        },
+        "reference_frame": {
+          "minimum": 792.0,
+          "maximum": 1567.0
+        },
+        "spatial_distance_m": {
+          "minimum": 0.173947015,
+          "maximum": 64.246614461
+        }
+      },
+      "unique_pair_count": 9636,
+      "duplicate_pair_count": 0,
+      "first_rows": [
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "stress",
+          "pair_id": "05_002571_000792",
+          "query_frame": "2571",
+          "reference_frame": "792",
+          "query_image_path": "sequences/05/image_0/002571.png",
+          "reference_image_path": "sequences/05/image_0/000792.png",
+          "temporal_separation_frames": "1779",
+          "spatial_distance_m": "6.162846797",
+          "heading_difference_deg": "70.184792978",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "stress",
+          "pair_id": "05_002571_000793",
+          "query_frame": "2571",
+          "reference_frame": "793",
+          "query_image_path": "sequences/05/image_0/002571.png",
+          "reference_image_path": "sequences/05/image_0/000793.png",
+          "temporal_separation_frames": "1778",
+          "spatial_distance_m": "6.027191359",
+          "heading_difference_deg": "68.761325698",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "stress",
+          "pair_id": "05_002571_000794",
+          "query_frame": "2571",
+          "reference_frame": "794",
+          "query_image_path": "sequences/05/image_0/002571.png",
+          "reference_image_path": "sequences/05/image_0/000794.png",
+          "temporal_separation_frames": "1777",
+          "spatial_distance_m": "5.918919828",
+          "heading_difference_deg": "67.112593388",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        }
+      ]
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/pairs/test_pairs.csv",
+      "size_bytes": 2505171,
+      "columns": [
+        "dataset",
+        "sequence",
+        "camera",
+        "split",
+        "pair_id",
+        "query_frame",
+        "reference_frame",
+        "query_image_path",
+        "reference_image_path",
+        "temporal_separation_frames",
+        "spatial_distance_m",
+        "heading_difference_deg",
+        "traversal_class",
+        "pair_class",
+        "binary_label"
+      ],
+      "row_count": 14170,
+      "detected_columns": {
+        "query": "query_frame",
+        "reference": "reference_frame",
+        "label": "binary_label",
+        "split_or_event": "split",
+        "distance": "spatial_distance_m"
+      },
+      "label_counts": {
+        "": 1186,
+        "0": 11715,
+        "1": 1269
+      },
+      "split_counts": {
+        "test": 14170
+      },
+      "numeric_ranges": {
+        "query_frame": {
+          "minimum": 2412.0,
+          "maximum": 2520.0
+        },
+        "reference_frame": {
+          "minimum": 14.0,
+          "maximum": 143.0
+        },
+        "spatial_distance_m": {
+          "minimum": 0.133270265,
+          "maximum": 105.513839545
+        }
+      },
+      "unique_pair_count": 14170,
+      "duplicate_pair_count": 0,
+      "first_rows": [
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "test",
+          "pair_id": "05_002412_000014",
+          "query_frame": "2412",
+          "reference_frame": "14",
+          "query_image_path": "sequences/05/image_0/002412.png",
+          "reference_image_path": "sequences/05/image_0/000014.png",
+          "temporal_separation_frames": "2398",
+          "spatial_distance_m": "5.328120905",
+          "heading_difference_deg": "58.599002008",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "test",
+          "pair_id": "05_002412_000015",
+          "query_frame": "2412",
+          "reference_frame": "15",
+          "query_image_path": "sequences/05/image_0/002412.png",
+          "reference_image_path": "sequences/05/image_0/000015.png",
+          "temporal_separation_frames": "2397",
+          "spatial_distance_m": "5.099371479",
+          "heading_difference_deg": "58.639213716",
+          "traversal_class": "oblique",
+          "pair_class": "ambiguous",
+          "binary_label": ""
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "camera": "image_0",
+          "split": "test",
+          "pair_id": "05_002412_000016",
+          "query_frame": "2412",
+          "reference_frame": "16",
+          "query_image_path": "sequences/05/image_0/002412.png",
+          "reference_image_path": "sequences/05/image_0/000016.png",
+          "temporal_separation_frames": "2396",
+          "spatial_distance_m": "4.949024045",
+          "heading_difference_deg": "58.710890219",
+          "traversal_class": "oblique",
+          "pair_class": "positive",
+          "binary_label": "1"
+        }
+      ]
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/positive_pairs_r5_t100.csv",
+      "size_bytes": 813300,
+      "columns": [
+        "dataset",
+        "sequence",
+        "spatial_radius_m",
+        "temporal_exclusion_frames",
+        "query_frame",
+        "reference_frame",
+        "spatial_distance_m",
+        "query_heading_deg",
+        "reference_heading_deg",
+        "heading_difference_deg",
+        "traversal_class"
+      ],
+      "row_count": 6550,
+      "detected_columns": {
+        "query": "query_frame",
+        "reference": "reference_frame",
+        "label": null,
+        "split_or_event": null,
+        "distance": "spatial_distance_m"
+      },
+      "label_counts": {},
+      "split_counts": {},
+      "numeric_ranges": {
+        "query_frame": {
+          "minimum": 1292.0,
+          "maximum": 2636.0
+        },
+        "reference_frame": {
+          "minimum": 14.0,
+          "maximum": 1567.0
+        },
+        "spatial_distance_m": {
+          "minimum": 0.023971024175044566,
+          "maximum": 4.999220894068302
+        }
+      },
+      "unique_pair_count": 6550,
+      "duplicate_pair_count": 0,
+      "first_rows": [
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "1292",
+          "reference_frame": "532",
+          "spatial_distance_m": "4.9045491250470725",
+          "query_heading_deg": "215.37831635321965",
+          "reference_heading_deg": "328.8412641276212",
+          "heading_difference_deg": "113.46294777440153",
+          "traversal_class": "oblique"
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "1292",
+          "reference_frame": "533",
+          "spatial_distance_m": "4.735816550501107",
+          "query_heading_deg": "215.37831635321965",
+          "reference_heading_deg": "325.5344425023367",
+          "heading_difference_deg": "110.15612614911703",
+          "traversal_class": "oblique"
+        },
+        {
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "1292",
+          "reference_frame": "534",
+          "spatial_distance_m": "4.651633076673196",
+          "query_heading_deg": "215.37831635321965",
+          "reference_heading_deg": "322.1601446540785",
+          "heading_difference_deg": "106.78182830085888",
+          "traversal_class": "oblique"
+        }
+      ]
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/splits/calibration_positive_pairs.csv",
+      "size_bytes": 552500,
+      "columns": [
+        "split",
+        "event_id",
+        "dataset",
+        "sequence",
+        "spatial_radius_m",
+        "temporal_exclusion_frames",
+        "query_frame",
+        "reference_frame",
+        "spatial_distance_m",
+        "query_heading_deg",
+        "reference_heading_deg",
+        "heading_difference_deg",
+        "traversal_class"
+      ],
+      "row_count": 3985,
+      "detected_columns": {
+        "query": "query_frame",
+        "reference": "reference_frame",
+        "label": null,
+        "split_or_event": "split",
+        "distance": "spatial_distance_m"
+      },
+      "label_counts": {},
+      "split_counts": {
+        "calibration": 3985
+      },
+      "numeric_ranges": {
+        "query_frame": {
+          "minimum": 1292.0,
+          "maximum": 1564.0
+        },
+        "reference_frame": {
+          "minimum": 526.0,
+          "maximum": 813.0
+        },
+        "spatial_distance_m": {
+          "minimum": 0.023971024175044566,
+          "maximum": 4.998661351958244
+        }
+      },
+      "unique_pair_count": 3985,
+      "duplicate_pair_count": 0,
+      "first_rows": [
+        {
+          "split": "calibration",
+          "event_id": "1",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "1292",
+          "reference_frame": "532",
+          "spatial_distance_m": "4.9045491250470725",
+          "query_heading_deg": "215.37831635321965",
+          "reference_heading_deg": "328.8412641276212",
+          "heading_difference_deg": "113.46294777440153",
+          "traversal_class": "oblique"
+        },
+        {
+          "split": "calibration",
+          "event_id": "1",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "1292",
+          "reference_frame": "533",
+          "spatial_distance_m": "4.735816550501107",
+          "query_heading_deg": "215.37831635321965",
+          "reference_heading_deg": "325.5344425023367",
+          "heading_difference_deg": "110.15612614911703",
+          "traversal_class": "oblique"
+        },
+        {
+          "split": "calibration",
+          "event_id": "1",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "1292",
+          "reference_frame": "534",
+          "spatial_distance_m": "4.651633076673196",
+          "query_heading_deg": "215.37831635321965",
+          "reference_heading_deg": "322.1601446540785",
+          "heading_difference_deg": "106.78182830085888",
+          "traversal_class": "oblique"
+        }
+      ]
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/splits/stress_positive_pairs.csv",
+      "size_bytes": 171265,
+      "columns": [
+        "split",
+        "event_id",
+        "dataset",
+        "sequence",
+        "spatial_radius_m",
+        "temporal_exclusion_frames",
+        "query_frame",
+        "reference_frame",
+        "spatial_distance_m",
+        "query_heading_deg",
+        "reference_heading_deg",
+        "heading_difference_deg",
+        "traversal_class"
+      ],
+      "row_count": 1296,
+      "detected_columns": {
+        "query": "query_frame",
+        "reference": "reference_frame",
+        "label": null,
+        "split_or_event": "split",
+        "distance": "spatial_distance_m"
+      },
+      "label_counts": {},
+      "split_counts": {
+        "stress": 1296
+      },
+      "numeric_ranges": {
+        "query_frame": {
+          "minimum": 2571.0,
+          "maximum": 2636.0
+        },
+        "reference_frame": {
+          "minimum": 792.0,
+          "maximum": 1567.0
+        },
+        "spatial_distance_m": {
+          "minimum": 0.17394701529201534,
+          "maximum": 4.997284534389197
+        }
+      },
+      "unique_pair_count": 1296,
+      "duplicate_pair_count": 0,
+      "first_rows": [
+        {
+          "split": "stress",
+          "event_id": "3",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "2571",
+          "reference_frame": "1553",
+          "spatial_distance_m": "4.940842122608652",
+          "query_heading_deg": "359.0526532955881",
+          "reference_heading_deg": "272.82674913966946",
+          "heading_difference_deg": "86.22590415591861",
+          "traversal_class": "oblique"
+        },
+        {
+          "split": "stress",
+          "event_id": "3",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "2571",
+          "reference_frame": "1554",
+          "spatial_distance_m": "4.863235648557569",
+          "query_heading_deg": "359.0526532955881",
+          "reference_heading_deg": "272.6288248064948",
+          "heading_difference_deg": "86.4238284890933",
+          "traversal_class": "oblique"
+        },
+        {
+          "split": "stress",
+          "event_id": "3",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "2571",
+          "reference_frame": "1555",
+          "spatial_distance_m": "4.800380766465935",
+          "query_heading_deg": "359.0526532955881",
+          "reference_heading_deg": "272.46145741527175",
+          "heading_difference_deg": "86.59119588031632",
+          "traversal_class": "oblique"
+        }
+      ]
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/splits/test_positive_pairs.csv",
+      "size_bytes": 166291,
+      "columns": [
+        "split",
+        "event_id",
+        "dataset",
+        "sequence",
+        "spatial_radius_m",
+        "temporal_exclusion_frames",
+        "query_frame",
+        "reference_frame",
+        "spatial_distance_m",
+        "query_heading_deg",
+        "reference_heading_deg",
+        "heading_difference_deg",
+        "traversal_class"
+      ],
+      "row_count": 1269,
+      "detected_columns": {
+        "query": "query_frame",
+        "reference": "reference_frame",
+        "label": null,
+        "split_or_event": "split",
+        "distance": "spatial_distance_m"
+      },
+      "label_counts": {},
+      "split_counts": {
+        "test": 1269
+      },
+      "numeric_ranges": {
+        "query_frame": {
+          "minimum": 2412.0,
+          "maximum": 2520.0
+        },
+        "reference_frame": {
+          "minimum": 14.0,
+          "maximum": 143.0
+        },
+        "spatial_distance_m": {
+          "minimum": 0.13327026525073202,
+          "maximum": 4.999220894068302
+        }
+      },
+      "unique_pair_count": 1269,
+      "duplicate_pair_count": 0,
+      "first_rows": [
+        {
+          "split": "test",
+          "event_id": "2",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "2412",
+          "reference_frame": "16",
+          "spatial_distance_m": "4.9490240447956815",
+          "query_heading_deg": "57.52949471565711",
+          "reference_heading_deg": "358.8186044963454",
+          "heading_difference_deg": "58.71089021931169",
+          "traversal_class": "oblique"
+        },
+        {
+          "split": "test",
+          "event_id": "2",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "2412",
+          "reference_frame": "17",
+          "spatial_distance_m": "4.888681317092027",
+          "query_heading_deg": "57.52949471565711",
+          "reference_heading_deg": "358.77037871168653",
+          "heading_difference_deg": "58.759116003970576",
+          "traversal_class": "oblique"
+        },
+        {
+          "split": "test",
+          "event_id": "2",
+          "dataset": "KITTI_odometry",
+          "sequence": "05",
+          "spatial_radius_m": "5.0",
+          "temporal_exclusion_frames": "100",
+          "query_frame": "2412",
+          "reference_frame": "18",
+          "spatial_distance_m": "4.933306076103124",
+          "query_heading_deg": "57.52949471565711",
+          "reference_heading_deg": "358.71483171160065",
+          "heading_difference_deg": "58.814663004056456",
+          "traversal_class": "oblique"
+        }
+      ]
+    }
+  ]
+}

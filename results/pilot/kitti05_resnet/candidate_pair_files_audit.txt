@@ -1,0 +1,76 @@
+===============================================================================
+AUDITORIA DOS ARQUIVOS DE PARES — KITTI 05
+===============================================================================
+
+results/pilot/kitti05_resnet/pairs/calibration_pairs.csv
+  linhas            : 78624
+  colunas           : ['dataset', 'sequence', 'camera', 'split', 'pair_id', 'query_frame', 'reference_frame', 'query_image_path', 'reference_image_path', 'temporal_separation_frames', 'spatial_distance_m', 'heading_difference_deg', 'traversal_class', 'pair_class', 'binary_label']
+  colunas detectadas: {'query': 'query_frame', 'reference': 'reference_frame', 'label': 'binary_label', 'split_or_event': 'split', 'distance': 'spatial_distance_m'}
+  contagem de labels: {'': 3572, '0': 71067, '1': 3985}
+  contagem de splits: {'calibration': 78624}
+  pares únicos      : 78624
+  pares duplicados  : 0
+  intervalos        : {'query_frame': {'minimum': 1292.0, 'maximum': 1564.0}, 'reference_frame': {'minimum': 526.0, 'maximum': 813.0}, 'spatial_distance_m': {'minimum': 0.023971024, 'maximum': 221.033369282}}
+
+results/pilot/kitti05_resnet/pairs/stress_pairs.csv
+  linhas            : 9636
+  colunas           : ['dataset', 'sequence', 'camera', 'split', 'pair_id', 'query_frame', 'reference_frame', 'query_image_path', 'reference_image_path', 'temporal_separation_frames', 'spatial_distance_m', 'heading_difference_deg', 'traversal_class', 'pair_class', 'binary_label']
+  colunas detectadas: {'query': 'query_frame', 'reference': 'reference_frame', 'label': 'binary_label', 'split_or_event': 'split', 'distance': 'spatial_distance_m'}
+  contagem de labels: {'': 1226, '0': 7114, '1': 1296}
+  contagem de splits: {'stress': 9636}
+  pares únicos      : 9636
+  pares duplicados  : 0
+  intervalos        : {'query_frame': {'minimum': 2571.0, 'maximum': 2636.0}, 'reference_frame': {'minimum': 792.0, 'maximum': 1567.0}, 'spatial_distance_m': {'minimum': 0.173947015, 'maximum': 64.246614461}}
+
+results/pilot/kitti05_resnet/pairs/test_pairs.csv
+  linhas            : 14170
+  colunas           : ['dataset', 'sequence', 'camera', 'split', 'pair_id', 'query_frame', 'reference_frame', 'query_image_path', 'reference_image_path', 'temporal_separation_frames', 'spatial_distance_m', 'heading_difference_deg', 'traversal_class', 'pair_class', 'binary_label']
+  colunas detectadas: {'query': 'query_frame', 'reference': 'reference_frame', 'label': 'binary_label', 'split_or_event': 'split', 'distance': 'spatial_distance_m'}
+  contagem de labels: {'': 1186, '0': 11715, '1': 1269}
+  contagem de splits: {'test': 14170}
+  pares únicos      : 14170
+  pares duplicados  : 0
+  intervalos        : {'query_frame': {'minimum': 2412.0, 'maximum': 2520.0}, 'reference_frame': {'minimum': 14.0, 'maximum': 143.0}, 'spatial_distance_m': {'minimum': 0.133270265, 'maximum': 105.513839545}}
+
+results/pilot/kitti05_resnet/positive_pairs_r5_t100.csv
+  linhas            : 6550
+  colunas           : ['dataset', 'sequence', 'spatial_radius_m', 'temporal_exclusion_frames', 'query_frame', 'reference_frame', 'spatial_distance_m', 'query_heading_deg', 'reference_heading_deg', 'heading_difference_deg', 'traversal_class']
+  colunas detectadas: {'query': 'query_frame', 'reference': 'reference_frame', 'label': None, 'split_or_event': None, 'distance': 'spatial_distance_m'}
+  contagem de labels: {}
+  contagem de splits: {}
+  pares únicos      : 6550
+  pares duplicados  : 0
+  intervalos        : {'query_frame': {'minimum': 1292.0, 'maximum': 2636.0}, 'reference_frame': {'minimum': 14.0, 'maximum': 1567.0}, 'spatial_distance_m': {'minimum': 0.023971024175044566, 'maximum': 4.999220894068302}}
+
+results/pilot/kitti05_resnet/splits/calibration_positive_pairs.csv
+  linhas            : 3985
+  colunas           : ['split', 'event_id', 'dataset', 'sequence', 'spatial_radius_m', 'temporal_exclusion_frames', 'query_frame', 'reference_frame', 'spatial_distance_m', 'query_heading_deg', 'reference_heading_deg', 'heading_difference_deg', 'traversal_class']
+  colunas detectadas: {'query': 'query_frame', 'reference': 'reference_frame', 'label': None, 'split_or_event': 'split', 'distance': 'spatial_distance_m'}
+  contagem de labels: {}
+  contagem de splits: {'calibration': 3985}
+  pares únicos      : 3985
+  pares duplicados  : 0
+  intervalos        : {'query_frame': {'minimum': 1292.0, 'maximum': 1564.0}, 'reference_frame': {'minimum': 526.0, 'maximum': 813.0}, 'spatial_distance_m': {'minimum': 0.023971024175044566, 'maximum': 4.998661351958244}}
+
+results/pilot/kitti05_resnet/splits/stress_positive_pairs.csv
+  linhas            : 1296
+  colunas           : ['split', 'event_id', 'dataset', 'sequence', 'spatial_radius_m', 'temporal_exclusion_frames', 'query_frame', 'reference_frame', 'spatial_distance_m', 'query_heading_deg', 'reference_heading_deg', 'heading_difference_deg', 'traversal_class']
+  colunas detectadas: {'query': 'query_frame', 'reference': 'reference_frame', 'label': None, 'split_or_event': 'split', 'distance': 'spatial_distance_m'}
+  contagem de labels: {}
+  contagem de splits: {'stress': 1296}
+  pares únicos      : 1296
+  pares duplicados  : 0
+  intervalos        : {'query_frame': {'minimum': 2571.0, 'maximum': 2636.0}, 'reference_frame': {'minimum': 792.0, 'maximum': 1567.0}, 'spatial_distance_m': {'minimum': 0.17394701529201534, 'maximum': 4.997284534389197}}
+
+results/pilot/kitti05_resnet/splits/test_positive_pairs.csv
+  linhas            : 1269
+  colunas           : ['split', 'event_id', 'dataset', 'sequence', 'spatial_radius_m', 'temporal_exclusion_frames', 'query_frame', 'reference_frame', 'spatial_distance_m', 'query_heading_deg', 'reference_heading_deg', 'heading_difference_deg', 'traversal_class']
+  colunas detectadas: {'query': 'query_frame', 'reference': 'reference_frame', 'label': None, 'split_or_event': 'split', 'distance': 'spatial_distance_m'}
+  contagem de labels: {}
+  contagem de splits: {'test': 1269}
+  pares únicos      : 1269
+  pares duplicados  : 0
+  intervalos        : {'query_frame': {'minimum': 2412.0, 'maximum': 2520.0}, 'reference_frame': {'minimum': 14.0, 'maximum': 143.0}, 'spatial_distance_m': {'minimum': 0.13327026525073202, 'maximum': 4.999220894068302}}
+
+Relatório salvo em: results/pilot/kitti05_resnet/candidate_pair_files_audit.json
+===============================================================================

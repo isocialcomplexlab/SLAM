@@ -1,0 +1,102 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "curves": [
+    {
+      "split": "calibration",
+      "method": "legacy_exact",
+      "curve": "roc",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/calibration_legacy_exact_roc.csv",
+      "sha256": "69cac6a0ca31f1eb6fd445b258c48c90448e8eddb162506510125332f78e267c",
+      "point_count": 74797
+    },
+    {
+      "split": "calibration",
+      "method": "legacy_exact",
+      "curve": "precision_recall",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/calibration_legacy_exact_pr.csv",
+      "sha256": "045cc7d146048e698143eed5ffbff0e4c78a4751511558c31009b6a603def7d7",
+      "point_count": 74797
+    },
+    {
+      "split": "calibration",
+      "method": "corrected_l2",
+      "curve": "roc",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/calibration_corrected_l2_roc.csv",
+      "sha256": "42ffee751a43cd9d7436ac86e45558840f65bcea6f70f52671bdad2822c80d5e",
+      "point_count": 75053
+    },
+    {
+      "split": "calibration",
+      "method": "corrected_l2",
+      "curve": "precision_recall",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/calibration_corrected_l2_pr.csv",
+      "sha256": "90a39fa727524ea10c46270a73534bb31283f5cbafe8793fc4dea85a858c5998",
+      "point_count": 75053
+    },
+    {
+      "split": "test",
+      "method": "legacy_exact",
+      "curve": "roc",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_legacy_exact_roc.csv",
+      "sha256": "8068a43f80bf014ec590421db239204353f3e933b667d1e295da2ea37a10fb22",
+      "point_count": 12922
+    },
+    {
+      "split": "test",
+      "method": "legacy_exact",
+      "curve": "precision_recall",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_legacy_exact_pr.csv",
+      "sha256": "213f302505e0e6ac52ca7cf3863c25d97d88cf95e80f914b94e67ccb25e3460b",
+      "point_count": 12922
+    },
+    {
+      "split": "test",
+      "method": "corrected_l2",
+      "curve": "roc",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_corrected_l2_roc.csv",
+      "sha256": "1a002520eca72a8d1783153c553d666e9d20c343e3f0a22f34614fe03ee27012",
+      "point_count": 12985
+    },
+    {
+      "split": "test",
+      "method": "corrected_l2",
+      "curve": "precision_recall",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/test_corrected_l2_pr.csv",
+      "sha256": "a604517e5746663cfb8f3007c69b7f32a68354d87db45b723924c8fda8a6ee7b",
+      "point_count": 12985
+    },
+    {
+      "split": "stress",
+      "method": "legacy_exact",
+      "curve": "roc",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/stress_legacy_exact_roc.csv",
+      "sha256": "56ebdb8e2b58b4cc2a54c313b958323d0971e35b5b4468fb261c742d82dc0ca3",
+      "point_count": 8373
+    },
+    {
+      "split": "stress",
+      "method": "legacy_exact",
+      "curve": "precision_recall",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/stress_legacy_exact_pr.csv",
+      "sha256": "17b111607491f2e2665fb7ef310523da53faf52019da278784c372a4a32568a0",
+      "point_count": 8373
+    },
+    {
+      "split": "stress",
+      "method": "corrected_l2",
+      "curve": "roc",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/stress_corrected_l2_roc.csv",
+      "sha256": "7ce470807f3c987895850151e40d7fd374af30049c852bee639aa5a7dc601da4",
+      "point_count": 8411
+    },
+    {
+      "split": "stress",
+      "method": "corrected_l2",
+      "curve": "precision_recall",
+      "path": "results/pilot/kitti05_resnet/metrics/curves/stress_corrected_l2_pr.csv",
+      "sha256": "ca5952c9770414c803cf2369fb8982317c805c767eba8ec9544f96aba03c3c0a",
+      "point_count": 8411
+    }
+  ]
+}

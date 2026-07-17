@@ -1,0 +1,55 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "camera_id": "image_0",
+  "split": "calibration",
+  "descriptor_model": "resnet101_imagenet1k_v1",
+  "descriptor_dimension": 4096,
+  "descriptor_file": "results/pilot/kitti05_resnet/descriptors/kitti05_image0_frames000000_002760_resnet101_imagenet1k_v1.npz",
+  "descriptor_sha256": "67420407e00f61d654cba2eee249610cf9d57ba91f1db43f7ff0ae284ac6e7a5",
+  "pairs_file": "results/pilot/kitti05_resnet/pairs/calibration_pairs.csv",
+  "pairs_sha256": "af9c15bd0b4a9647568729fe8bf56f8c225a17c5ceb4ff85c5adad6d545914bf",
+  "scores_file": "results/pilot/kitti05_resnet/scores/calibration_scores.csv",
+  "scores_sha256": "49cc1a9eac8eac367cb2f4978814c68c8fbe69757b2a809f4e3f09a79be45f78",
+  "row_count": 78624,
+  "unique_pair_count": 78624,
+  "class_counts": {
+    "positive": 3985,
+    "ambiguous": 3572,
+    "negative": 71067
+  },
+  "binary_row_count": 75052,
+  "ambiguous_row_count": 3572,
+  "score_semantics": {
+    "legacy_exact_distance": "L-infinity/Chebyshev; smaller is more similar",
+    "legacy_exact_score": "negative L-infinity distance; larger is more similar",
+    "corrected_l2_distance": "Euclidean L2; smaller is more similar",
+    "corrected_l2_score": "negative Euclidean distance; larger is more similar"
+  },
+  "ground_truth_definition": {
+    "positive": "spatial_distance_m <= 5.0",
+    "ambiguous": "5.0 < spatial_distance_m < 10.0",
+    "negative": "spatial_distance_m >= 10.0"
+  },
+  "score_ranges": {
+    "legacy_exact_distance": {
+      "minimum": 0.379608154296875,
+      "maximum": 13.079941868782043
+    },
+    "legacy_exact_score": {
+      "minimum": -13.079941868782043,
+      "maximum": -0.379608154296875
+    },
+    "corrected_l2_distance": {
+      "minimum": 3.3233569557693765,
+      "maximum": 54.88530551769297
+    },
+    "corrected_l2_score": {
+      "minimum": -54.88530551769297,
+      "maximum": -3.3233569557693765
+    }
+  },
+  "elapsed_seconds": 4.990375600056723,
+  "pairs_per_second": 15755.126728157762,
+  "output_size_bytes": 21616447
+}

@@ -1,0 +1,28 @@
+Carregando calibration: results/pilot/kitti05_resnet/scores/calibration_scores.csv
+  contagens: {'total': 78624, 'binary': 75052, 'ambiguous': 3572, 'positive': 3985, 'negative': 71067}
+Carregando test: results/pilot/kitti05_resnet/scores/test_scores.csv
+  contagens: {'total': 14170, 'binary': 12984, 'ambiguous': 1186, 'positive': 1269, 'negative': 11715}
+Carregando stress: results/pilot/kitti05_resnet/scores/stress_scores.csv
+  contagens: {'total': 9636, 'binary': 8410, 'ambiguous': 1226, 'positive': 1296, 'negative': 7114}
+
+===============================================================================
+AVALIAÇÃO L=1 CONCLUÍDA
+===============================================================================
+
+legacy_exact
+  limiar de score    : -2.7038474082946777
+  limiar de distância: 2.7038474082946777
+  F1 na calibração   : 0.42217809683824653
+  calibration ROC-AUC=0.790126 PR-AUC=0.419142 AP=0.419181 F1=0.422178
+  test        ROC-AUC=0.730510 PR-AUC=0.458857 AP=0.458971 F1=0.430818
+  stress      ROC-AUC=0.592619 PR-AUC=0.356711 AP=0.356887 F1=0.299367
+
+corrected_l2
+  limiar de score    : -21.821827426452618
+  limiar de distância: 21.821827426452618
+  F1 na calibração   : 0.5416929879974731
+  calibration ROC-AUC=0.785324 PR-AUC=0.543949 AP=0.543971 F1=0.541693
+  test        ROC-AUC=0.824498 PR-AUC=0.593839 AP=0.593918 F1=0.491369
+  stress      ROC-AUC=0.608183 PR-AUC=0.393067 AP=0.393214 F1=0.337209
+
+Artefatos: {"threshold": "results/pilot/kitti05_resnet/metrics/threshold.json", "metrics_l1": "results/pilot/kitti05_resnet/metrics/metrics_l1.json", "metrics_summary": "results/pilot/kitti05_resnet/metrics/metrics_summary.csv", "confusion_matrices": "results/pilot/kitti05_resnet/metrics/confusion_matrices.csv"}

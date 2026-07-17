@@ -1,0 +1,137 @@
+===============================================================================
+INVENTÁRIO COMPLETO DE CSVs — KITTI 05
+===============================================================================
+
+results/pilot/kitti05_resnet/kitti05_manifest.csv
+  linhas             : 2761
+  tamanho            : 284963 bytes
+  colunas detectadas : {'query': None, 'reference': None, 'distance': None, 'label': None, 'split': None}
+  classes por distância: {}
+  labels explícitos  : {}
+  splits             : {}
+  pares únicos       : None
+  duplicados         : None
+  intervalo de frames: {'minimum': None, 'maximum': None}
+
+results/pilot/kitti05_resnet/notebook_audit.csv
+  linhas             : 6
+  tamanho            : 481 bytes
+  colunas detectadas : {'query': None, 'reference': None, 'distance': None, 'label': None, 'split': None}
+  classes por distância: {}
+  labels explícitos  : {}
+  splits             : {}
+  pares únicos       : None
+  duplicados         : None
+  intervalo de frames: {'minimum': None, 'maximum': None}
+
+results/pilot/kitti05_resnet/pairs/calibration_pairs.csv  *** calibration_candidates ***
+  linhas             : 78624
+  tamanho            : 14465205 bytes
+  colunas detectadas : {'query': 'query_frame', 'reference': 'reference_frame', 'distance': 'spatial_distance_m', 'label': 'binary_label', 'split': 'split'}
+  classes por distância: {'ambiguous': 3572, 'negative': 71067, 'positive': 3985}
+  labels explícitos  : {'': 3572, '0': 71067, '1': 3985}
+  splits             : {'calibration': 78624}
+  pares únicos       : 78624
+  duplicados         : 0
+  intervalo de frames: {'minimum': 526, 'maximum': 1564}
+
+results/pilot/kitti05_resnet/pairs/stress_pairs.csv  *** stress_candidates ***
+  linhas             : 9636
+  tamanho            : 1716200 bytes
+  colunas detectadas : {'query': 'query_frame', 'reference': 'reference_frame', 'distance': 'spatial_distance_m', 'label': 'binary_label', 'split': 'split'}
+  classes por distância: {'ambiguous': 1226, 'negative': 7114, 'positive': 1296}
+  labels explícitos  : {'': 1226, '0': 7114, '1': 1296}
+  splits             : {'stress': 9636}
+  pares únicos       : 9636
+  duplicados         : 0
+  intervalo de frames: {'minimum': 792, 'maximum': 2636}
+
+results/pilot/kitti05_resnet/pairs/test_pairs.csv  *** test_candidates ***
+  linhas             : 14170
+  tamanho            : 2505171 bytes
+  colunas detectadas : {'query': 'query_frame', 'reference': 'reference_frame', 'distance': 'spatial_distance_m', 'label': 'binary_label', 'split': 'split'}
+  classes por distância: {'ambiguous': 1186, 'negative': 11715, 'positive': 1269}
+  labels explícitos  : {'': 1186, '0': 11715, '1': 1269}
+  splits             : {'test': 14170}
+  pares únicos       : 14170
+  duplicados         : 0
+  intervalo de frames: {'minimum': 14, 'maximum': 2520}
+
+results/pilot/kitti05_resnet/positive_pairs_r5_t100.csv
+  linhas             : 6550
+  tamanho            : 813300 bytes
+  colunas detectadas : {'query': 'query_frame', 'reference': 'reference_frame', 'distance': 'spatial_distance_m', 'label': None, 'split': None}
+  classes por distância: {'positive': 6550}
+  labels explícitos  : {}
+  splits             : {}
+  pares únicos       : 6550
+  duplicados         : 0
+  intervalo de frames: {'minimum': 14, 'maximum': 2636}
+
+results/pilot/kitti05_resnet/revisit_events_r5_t100.csv
+  linhas             : 3
+  tamanho            : 718 bytes
+  colunas detectadas : {'query': None, 'reference': None, 'distance': None, 'label': None, 'split': None}
+  classes por distância: {}
+  labels explícitos  : {}
+  splits             : {}
+  pares únicos       : None
+  duplicados         : None
+  intervalo de frames: {'minimum': None, 'maximum': None}
+
+results/pilot/kitti05_resnet/revisit_summary.csv
+  linhas             : 12
+  tamanho            : 1085 bytes
+  colunas detectadas : {'query': None, 'reference': None, 'distance': None, 'label': None, 'split': None}
+  classes por distância: {}
+  labels explícitos  : {}
+  splits             : {}
+  pares únicos       : None
+  duplicados         : None
+  intervalo de frames: {'minimum': None, 'maximum': None}
+
+results/pilot/kitti05_resnet/splits/calibration_positive_pairs.csv  *** calibration_positives ***
+  linhas             : 3985
+  tamanho            : 552500 bytes
+  colunas detectadas : {'query': 'query_frame', 'reference': 'reference_frame', 'distance': 'spatial_distance_m', 'label': None, 'split': 'split'}
+  classes por distância: {'positive': 3985}
+  labels explícitos  : {}
+  splits             : {'calibration': 3985}
+  pares únicos       : 3985
+  duplicados         : 0
+  intervalo de frames: {'minimum': 526, 'maximum': 1564}
+
+results/pilot/kitti05_resnet/splits/stress_positive_pairs.csv  *** stress_positives ***
+  linhas             : 1296
+  tamanho            : 171265 bytes
+  colunas detectadas : {'query': 'query_frame', 'reference': 'reference_frame', 'distance': 'spatial_distance_m', 'label': None, 'split': 'split'}
+  classes por distância: {'positive': 1296}
+  labels explícitos  : {}
+  splits             : {'stress': 1296}
+  pares únicos       : 1296
+  duplicados         : 0
+  intervalo de frames: {'minimum': 792, 'maximum': 2636}
+
+results/pilot/kitti05_resnet/splits/test_positive_pairs.csv  *** test_positives ***
+  linhas             : 1269
+  tamanho            : 166291 bytes
+  colunas detectadas : {'query': 'query_frame', 'reference': 'reference_frame', 'distance': 'spatial_distance_m', 'label': None, 'split': 'split'}
+  classes por distância: {'positive': 1269}
+  labels explícitos  : {}
+  splits             : {'test': 1269}
+  pares únicos       : 1269
+  duplicados         : 0
+  intervalo de frames: {'minimum': 14, 'maximum': 2520}
+
+===============================================================================
+ARQUIVOS QUE CORRESPONDEM AOS TOTAIS ESPERADOS
+===============================================================================
+calibration_candidates     78624  results/pilot/kitti05_resnet/pairs/calibration_pairs.csv
+stress_candidates           9636  results/pilot/kitti05_resnet/pairs/stress_pairs.csv
+test_candidates            14170  results/pilot/kitti05_resnet/pairs/test_pairs.csv
+calibration_positives       3985  results/pilot/kitti05_resnet/splits/calibration_positive_pairs.csv
+stress_positives            1296  results/pilot/kitti05_resnet/splits/stress_positive_pairs.csv
+test_positives              1269  results/pilot/kitti05_resnet/splits/test_positive_pairs.csv
+
+Os três arquivos completos de candidatos foram localizados.
+Relatório salvo em: results/pilot/kitti05_resnet/candidate_csv_inventory.json
