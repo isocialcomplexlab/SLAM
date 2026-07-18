@@ -1,0 +1,16 @@
+Reviewer 2 — Temporal sequence-length ablation
+
+Comment:
+The manuscript used a fixed sequence of three consecutive distance matches without providing an ablation or separating descriptor discrimination from temporal post-processing.
+
+Response:
+Thank you for this important observation. We revised the methodology and experiments to separate descriptor-level evaluation from temporal verification. Descriptor performance is now reported at L=1, without temporal aggregation. We additionally evaluated strict consecutive-reference windows with L={1,2,3,5}. For every method and L, the operational threshold was calibrated exclusively on the calibration event and then applied unchanged to the held-out test and diagnostic stress events. Windows containing ambiguous geometric pairs were excluded from binary metrics.
+
+On the held-out KITTI 05 test event, the corrected Euclidean descriptor obtained ROC-AUC/AP/F1 values of 0.824498/0.593918/0.491369 at L=1. Although L=2 produced a marginal ROC-AUC increase to 0.824784, AP and F1 decreased to 0.587019 and 0.489590. Performance decreased further for longer windows; at L=5, AP=0.530753 and F1=0.440529. These results show that the original three-match rule is not universally optimal and should not be conflated with descriptor quality.
+
+Changes in the manuscript:
+1. Added the subsection “Temporal-Window Ablation”.
+2. Added Table \ref{tab:kitti05_resnet_temporal_ablation} with L={1,2,3,5}.
+3. Added Figures \ref{fig:kitti05_resnet_temporal_ap} and \ref{fig:kitti05_resnet_temporal_f1}.
+4. Clarified that L=1 is the descriptor-level result and L>1 is a separate temporal-verification ablation.
+5. Reported ROC-AUC, PR-AUC, average precision, F1, and confusion matrices using continuous scores and calibration-only thresholds.

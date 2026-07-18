@@ -1,0 +1,72 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "evaluation_level": "temporal_reference_window",
+  "sequence_lengths": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "sources": [
+    [
+      "results/pilot/kitti05_resnet/scores/calibration_scores.csv",
+      "49cc1a9eac8eac367cb2f4978814c68c8fbe69757b2a809f4e3f09a79be45f78"
+    ],
+    [
+      "results/pilot/kitti05_resnet/scores/stress_scores.csv",
+      "7c3fdc04d8753071ea3b9e0688d5673680649a996ef7d414080b1d7c672ba22d"
+    ],
+    [
+      "results/pilot/kitti05_resnet/scores/test_scores.csv",
+      "710304721dcd9479d7e60eb894d78bed3802b4c7ba8e824346a7ed1ab8ebda8c"
+    ]
+  ],
+  "artifacts": [
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/temporal_thresholds.json",
+      "sha256": "c75e60830e48a3412591185c13c8fd9ae97067782b42c8ab32679a59aee64fac",
+      "size_bytes": 7827
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/metrics_temporal.json",
+      "sha256": "c131f701f8dd6da3f81e195fb968b2258efeab54a850db816fe81bff51d4127d",
+      "size_bytes": 53374
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/temporal_ablation.csv",
+      "sha256": "8d5fa95a66908ae7c89addff0795762047d02f2d596a2628431422deadee9d14",
+      "size_bytes": 10684
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/temporal_confusion_matrices.csv",
+      "sha256": "eb2d1bb4a2b5755ba3dc478dca190aa1b257923591b2b9bc469c2fa84f22f40d",
+      "size_bytes": 1591
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/temporal_window_counts.csv",
+      "sha256": "0f0120fa73c6b8f77079bf75b706ffc7695c0a3619c1c823427b330fb9aa1606",
+      "size_bytes": 955
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/metrics_l1_temporal.json",
+      "sha256": "b12b6fa8e3df2a163a19d1327dbae1971f8a7b1da13faa10bc454a3ee59ff616",
+      "size_bytes": 11469
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/metrics_l2.json",
+      "sha256": "89c82056eb57f20daf0618e221bd3eb29c2f3b5e84b6e8675e4f497bab2bc0b9",
+      "size_bytes": 11204
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/metrics_l3.json",
+      "sha256": "f44f260c7d49194a6efd04edce35e8d801414c059a7312177869b19712b0067d",
+      "size_bytes": 11199
+    },
+    {
+      "path": "results/pilot/kitti05_resnet/metrics/metrics_l5.json",
+      "sha256": "4ed0bb091180d1f08d150170653949dfcccf69f12bf0ea37c33bb877d3d2913d",
+      "size_bytes": 11187
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "protocol": {
+    "legacy_semantics": "one_query_descriptor_compared_against_L_consecutive_reference_frames",
+    "contiguity_rule": "reference_frame_increments_by_one",
+    "window_score": "minimum_constituent_similarity_score_equivalent_to_negative_maximum_constituent_distance",
+    "positive_window": "all_L_constituent_pairs_are_geometric_positives",
+    "negative_window": "no_ambiguous_constituents_and_at_least_one_geometric_negative",
+    "ambiguous_window": "at_least_one_constituent_pair_is_ambiguous",
+    "ambiguous_policy": "excluded_from_binary_metrics",
+    "calibration_split": "calibration",
+    "threshold_criterion": "maximum_f1_separately_for_each_method_and_L",
+    "test_threshold_recalibration": false,
+    "stress_threshold_recalibration": false,
+    "prediction_rule": "window_score_greater_than_or_equal_to_calibrated_threshold"
+  },
+  "thresholds": {
+    "1": {
+      "legacy_exact": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -2.7038474082946777,
+        "precision": 0.5394223263075723,
+        "recall": 0.34680050188205774,
+        "f1": 0.42217809683824653,
+        "sequence_length": 1,
+        "calibrated_on_split": "calibration",
+        "score_field": "legacy_exact_score",
+        "distance_field": "legacy_exact_distance",
+        "distance_name": "L-infinity/Chebyshev",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -2.7038474082946777,
+        "distance_threshold": 2.7038474082946777,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      },
+      "corrected_l2": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -21.821827426452618,
+        "precision": 0.7307200681721346,
+        "recall": 0.43036386449184444,
+        "f1": 0.5416929879974731,
+        "sequence_length": 1,
+        "calibrated_on_split": "calibration",
+        "score_field": "corrected_l2_score",
+        "distance_field": "corrected_l2_distance",
+        "distance_name": "Euclidean L2",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -21.821827426452618,
+        "distance_threshold": 21.821827426452618,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      }
+    },
+    "2": {
+      "legacy_exact": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -3.0224552154541016,
+        "precision": 0.48740127867619404,
+        "recall": 0.34913793103448276,
+        "f1": 0.4068435096531157,
+        "sequence_length": 2,
+        "calibrated_on_split": "calibration",
+        "score_field": "legacy_exact_score",
+        "distance_field": "legacy_exact_distance",
+        "distance_name": "L-infinity/Chebyshev",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -3.0224552154541016,
+        "distance_threshold": 3.0224552154541016,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      },
+      "corrected_l2": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -22.697730197241732,
+        "precision": 0.7253553415864282,
+        "recall": 0.4261853448275862,
+        "f1": 0.5369081961649415,
+        "sequence_length": 2,
+        "calibrated_on_split": "calibration",
+        "score_field": "corrected_l2_score",
+        "distance_field": "corrected_l2_distance",
+        "distance_name": "Euclidean L2",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -22.697730197241732,
+        "distance_threshold": 22.697730197241732,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      }
+    },
+    "3": {
+      "legacy_exact": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -3.2061469554901123,
+        "precision": 0.47639653815892996,
+        "recall": 0.35213724920034895,
+        "f1": 0.4049490051830798,
+        "sequence_length": 3,
+        "calibrated_on_split": "calibration",
+        "score_field": "legacy_exact_score",
+        "distance_field": "legacy_exact_distance",
+        "distance_name": "L-infinity/Chebyshev",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -3.2061469554901123,
+        "distance_threshold": 3.2061469554901123,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      },
+      "corrected_l2": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -23.165499370491236,
+        "precision": 0.7262455059065228,
+        "recall": 0.4111660366385577,
+        "f1": 0.5250649832900112,
+        "sequence_length": 3,
+        "calibrated_on_split": "calibration",
+        "score_field": "corrected_l2_score",
+        "distance_field": "corrected_l2_distance",
+        "distance_name": "Euclidean L2",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -23.165499370491236,
+        "distance_threshold": 23.165499370491236,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      }
+    },
+    "5": {
+      "legacy_exact": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -3.4387362003326416,
+        "precision": 0.47435271128480705,
+        "recall": 0.3356377462841341,
+        "f1": 0.3931174089068826,
+        "sequence_length": 5,
+        "calibrated_on_split": "calibration",
+        "score_field": "legacy_exact_score",
+        "distance_field": "legacy_exact_distance",
+        "distance_name": "L-infinity/Chebyshev",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -3.4387362003326416,
+        "distance_threshold": 3.4387362003326416,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      },
+      "corrected_l2": {
+        "criterion": "maximum_f1",
+        "tie_breaker": "higher_precision_then_higher_threshold",
+        "threshold": -24.49470554301247,
+        "precision": 0.6305177111716621,
+        "recall": 0.399930867611476,
+        "f1": 0.48942470389170895,
+        "sequence_length": 5,
+        "calibrated_on_split": "calibration",
+        "score_field": "corrected_l2_score",
+        "distance_field": "corrected_l2_distance",
+        "distance_name": "Euclidean L2",
+        "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+        "score_semantics": "larger_is_more_similar",
+        "score_threshold": -24.49470554301247,
+        "distance_threshold": 24.49470554301247,
+        "applied_without_recalibration_to": [
+          "test",
+          "stress"
+        ]
+      }
+    }
+  }
+}

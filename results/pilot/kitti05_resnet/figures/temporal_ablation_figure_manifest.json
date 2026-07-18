@@ -1,0 +1,42 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "split": "test",
+  "evaluation_level": "temporal_reference_window",
+  "sequence_lengths": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "source": {
+    "path": "results/pilot/kitti05_resnet/metrics/temporal_ablation.csv",
+    "sha256": "8d5fa95a66908ae7c89addff0795762047d02f2d596a2628431422deadee9d14"
+  },
+  "figures": [
+    {
+      "metric": "average_precision",
+      "path": "results/pilot/kitti05_resnet/figures/temporal_ablation_average_precision.pdf",
+      "paper_copy": "paper/Figures/Fig_13_KITTI05_ResNet101_Temporal_AP.pdf",
+      "sha256": "4e40869417fcb0709b120f352816f540c6d1cdfd83eb875ae87f4904110b1507",
+      "size_bytes": 19385
+    },
+    {
+      "metric": "f1",
+      "path": "results/pilot/kitti05_resnet/figures/temporal_ablation_f1.pdf",
+      "paper_copy": "paper/Figures/Fig_14_KITTI05_ResNet101_Temporal_F1.pdf",
+      "sha256": "7a5910958cc11ee43586f75042ae1db6ad3341457af095a2d31fae8bc15bfa80",
+      "size_bytes": 18026
+    }
+  ],
+  "methods": [
+    "legacy_exact",
+    "corrected_l2"
+  ],
+  "interpretation": {
+    "corrected_l2_best_test_roc_auc_L": 2,
+    "corrected_l2_best_test_average_precision_L": 1,
+    "corrected_l2_best_test_f1_L": 1,
+    "conclusion": "Longer strict temporal windows did not improve AP or calibrated F1 on the held-out test event."
+  }
+}

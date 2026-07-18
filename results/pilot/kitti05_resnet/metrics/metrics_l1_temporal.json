@@ -1,0 +1,289 @@
+{
+  "dataset": "KITTI",
+  "sequence": "05",
+  "evaluation_level": "temporal_reference_window",
+  "protocol": {
+    "legacy_semantics": "one_query_descriptor_compared_against_L_consecutive_reference_frames",
+    "contiguity_rule": "reference_frame_increments_by_one",
+    "window_score": "minimum_constituent_similarity_score_equivalent_to_negative_maximum_constituent_distance",
+    "positive_window": "all_L_constituent_pairs_are_geometric_positives",
+    "negative_window": "no_ambiguous_constituents_and_at_least_one_geometric_negative",
+    "ambiguous_window": "at_least_one_constituent_pair_is_ambiguous",
+    "ambiguous_policy": "excluded_from_binary_metrics",
+    "calibration_split": "calibration",
+    "threshold_criterion": "maximum_f1_separately_for_each_method_and_L",
+    "test_threshold_recalibration": false,
+    "stress_threshold_recalibration": false,
+    "prediction_rule": "window_score_greater_than_or_equal_to_calibrated_threshold"
+  },
+  "l1_equivalence": {
+    "status": "passed",
+    "reference_file": "results/pilot/kitti05_resnet/metrics/metrics_l1.json",
+    "reference_sha256": "919df7049b9abea9cbc7ed376c9f3671a34602d2ab60aaf980b459e85504d89a",
+    "absolute_tolerance": 1e-12,
+    "compared_numeric_values": 116
+  },
+  "sequence_length": 1,
+  "thresholds": {
+    "legacy_exact": {
+      "criterion": "maximum_f1",
+      "tie_breaker": "higher_precision_then_higher_threshold",
+      "threshold": -2.7038474082946777,
+      "precision": 0.5394223263075723,
+      "recall": 0.34680050188205774,
+      "f1": 0.42217809683824653,
+      "sequence_length": 1,
+      "calibrated_on_split": "calibration",
+      "score_field": "legacy_exact_score",
+      "distance_field": "legacy_exact_distance",
+      "distance_name": "L-infinity/Chebyshev",
+      "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+      "score_semantics": "larger_is_more_similar",
+      "score_threshold": -2.7038474082946777,
+      "distance_threshold": 2.7038474082946777,
+      "applied_without_recalibration_to": [
+        "test",
+        "stress"
+      ]
+    },
+    "corrected_l2": {
+      "criterion": "maximum_f1",
+      "tie_breaker": "higher_precision_then_higher_threshold",
+      "threshold": -21.821827426452618,
+      "precision": 0.7307200681721346,
+      "recall": 0.43036386449184444,
+      "f1": 0.5416929879974731,
+      "sequence_length": 1,
+      "calibrated_on_split": "calibration",
+      "score_field": "corrected_l2_score",
+      "distance_field": "corrected_l2_distance",
+      "distance_name": "Euclidean L2",
+      "window_score_aggregation": "minimum_similarity_score_equivalent_to_negative_maximum_distance",
+      "score_semantics": "larger_is_more_similar",
+      "score_threshold": -21.821827426452618,
+      "distance_threshold": 21.821827426452618,
+      "applied_without_recalibration_to": [
+        "test",
+        "stress"
+      ]
+    }
+  },
+  "splits": {
+    "calibration": {
+      "source_file": "results/pilot/kitti05_resnet/scores/calibration_scores.csv",
+      "source_sha256": "49cc1a9eac8eac367cb2f4978814c68c8fbe69757b2a809f4e3f09a79be45f78",
+      "source_pair_rows": 78624,
+      "source_query_count": 273,
+      "candidate_window_positions": 78624,
+      "contiguous_windows": 78624,
+      "nonconsecutive_windows_skipped": 0,
+      "ambiguous_windows_excluded": 3572,
+      "binary_windows": 75052,
+      "positive_windows": 3985,
+      "negative_windows": 71067,
+      "query_count_with_contiguous_windows": 273,
+      "methods": {
+        "legacy_exact": {
+          "ranking": {
+            "sample_count": 75052,
+            "positive_count": 3985,
+            "negative_count": 71067,
+            "positive_prevalence": 0.053096519746309224,
+            "roc_auc": 0.7901262612927569,
+            "pr_auc": 0.4191422857013716,
+            "average_precision": 0.4191805894848989
+          },
+          "operating_point": {
+            "threshold": -2.7038474082946777,
+            "prediction_rule": "positive_if_score_greater_than_or_equal_to_threshold",
+            "true_positive": 1382,
+            "false_positive": 1180,
+            "true_negative": 69887,
+            "false_negative": 2603,
+            "precision": 0.5394223263075723,
+            "recall": 0.34680050188205774,
+            "specificity": 0.9833959503004207,
+            "f1": 0.42217809683824653,
+            "accuracy": 0.9495949475030645,
+            "balanced_accuracy": 0.6650982260912393,
+            "matthews_correlation_coefficient": 0.40774809835069126
+          },
+          "threshold_source_split": "calibration",
+          "recalibrated_on_this_split": false
+        },
+        "corrected_l2": {
+          "ranking": {
+            "sample_count": 75052,
+            "positive_count": 3985,
+            "negative_count": 71067,
+            "positive_prevalence": 0.053096519746309224,
+            "roc_auc": 0.7853238145444561,
+            "pr_auc": 0.5439486425340565,
+            "average_precision": 0.543971167269793
+          },
+          "operating_point": {
+            "threshold": -21.821827426452618,
+            "prediction_rule": "positive_if_score_greater_than_or_equal_to_threshold",
+            "true_positive": 1715,
+            "false_positive": 632,
+            "true_negative": 70435,
+            "false_negative": 2270,
+            "precision": 0.7307200681721346,
+            "recall": 0.43036386449184444,
+            "specificity": 0.9911069835507338,
+            "f1": 0.5416929879974731,
+            "accuracy": 0.9613334754570164,
+            "balanced_accuracy": 0.7107354240212891,
+            "matthews_correlation_coefficient": 0.5429714706760633
+          },
+          "threshold_source_split": "calibration",
+          "recalibrated_on_this_split": false
+        }
+      }
+    },
+    "test": {
+      "source_file": "results/pilot/kitti05_resnet/scores/test_scores.csv",
+      "source_sha256": "710304721dcd9479d7e60eb894d78bed3802b4c7ba8e824346a7ed1ab8ebda8c",
+      "source_pair_rows": 14170,
+      "source_query_count": 109,
+      "candidate_window_positions": 14170,
+      "contiguous_windows": 14170,
+      "nonconsecutive_windows_skipped": 0,
+      "ambiguous_windows_excluded": 1186,
+      "binary_windows": 12984,
+      "positive_windows": 1269,
+      "negative_windows": 11715,
+      "query_count_with_contiguous_windows": 109,
+      "methods": {
+        "legacy_exact": {
+          "ranking": {
+            "sample_count": 12984,
+            "positive_count": 1269,
+            "negative_count": 11715,
+            "positive_prevalence": 0.09773567467652496,
+            "roc_auc": 0.730510243446014,
+            "pr_auc": 0.4588570530683186,
+            "average_precision": 0.45897141665253427
+          },
+          "operating_point": {
+            "threshold": -2.7038474082946777,
+            "prediction_rule": "positive_if_score_greater_than_or_equal_to_threshold",
+            "true_positive": 411,
+            "false_positive": 228,
+            "true_negative": 11487,
+            "false_negative": 858,
+            "precision": 0.6431924882629108,
+            "recall": 0.32387706855791965,
+            "specificity": 0.9805377720870678,
+            "f1": 0.4308176100628931,
+            "accuracy": 0.916358595194085,
+            "balanced_accuracy": 0.6522074203224937,
+            "matthews_correlation_coefficient": 0.417899452700309
+          },
+          "threshold_source_split": "calibration",
+          "recalibrated_on_this_split": false
+        },
+        "corrected_l2": {
+          "ranking": {
+            "sample_count": 12984,
+            "positive_count": 1269,
+            "negative_count": 11715,
+            "positive_prevalence": 0.09773567467652496,
+            "roc_auc": 0.824498102592199,
+            "pr_auc": 0.5938392561559989,
+            "average_precision": 0.5939180403879499
+          },
+          "operating_point": {
+            "threshold": -21.821827426452618,
+            "prediction_rule": "positive_if_score_greater_than_or_equal_to_threshold",
+            "true_positive": 427,
+            "false_positive": 42,
+            "true_negative": 11673,
+            "false_negative": 842,
+            "precision": 0.9104477611940298,
+            "recall": 0.33648542159180456,
+            "specificity": 0.9964148527528809,
+            "f1": 0.49136939010356734,
+            "accuracy": 0.9319162045594578,
+            "balanced_accuracy": 0.6664501371723427,
+            "matthews_correlation_coefficient": 0.5298028159051474
+          },
+          "threshold_source_split": "calibration",
+          "recalibrated_on_this_split": false
+        }
+      }
+    },
+    "stress": {
+      "source_file": "results/pilot/kitti05_resnet/scores/stress_scores.csv",
+      "source_sha256": "7c3fdc04d8753071ea3b9e0688d5673680649a996ef7d414080b1d7c672ba22d",
+      "source_pair_rows": 9636,
+      "source_query_count": 66,
+      "candidate_window_positions": 9636,
+      "contiguous_windows": 9636,
+      "nonconsecutive_windows_skipped": 0,
+      "ambiguous_windows_excluded": 1226,
+      "binary_windows": 8410,
+      "positive_windows": 1296,
+      "negative_windows": 7114,
+      "query_count_with_contiguous_windows": 66,
+      "methods": {
+        "legacy_exact": {
+          "ranking": {
+            "sample_count": 8410,
+            "positive_count": 1296,
+            "negative_count": 7114,
+            "positive_prevalence": 0.15410225921521997,
+            "roc_auc": 0.592618677915569,
+            "pr_auc": 0.35671051604374016,
+            "average_precision": 0.35688720623859116
+          },
+          "operating_point": {
+            "threshold": -2.7038474082946777,
+            "prediction_rule": "positive_if_score_greater_than_or_equal_to_threshold",
+            "true_positive": 260,
+            "false_positive": 181,
+            "true_negative": 6933,
+            "false_negative": 1036,
+            "precision": 0.5895691609977324,
+            "recall": 0.2006172839506173,
+            "specificity": 0.9745572111329772,
+            "f1": 0.2993667242371906,
+            "accuracy": 0.8552913198573128,
+            "balanced_accuracy": 0.5875872475417973,
+            "matthews_correlation_coefficient": 0.28373250831373864
+          },
+          "threshold_source_split": "calibration",
+          "recalibrated_on_this_split": false
+        },
+        "corrected_l2": {
+          "ranking": {
+            "sample_count": 8410,
+            "positive_count": 1296,
+            "negative_count": 7114,
+            "positive_prevalence": 0.15410225921521997,
+            "roc_auc": 0.6081827217762229,
+            "pr_auc": 0.3930666290459357,
+            "average_precision": 0.39321379481478214
+          },
+          "operating_point": {
+            "threshold": -21.821827426452618,
+            "prediction_rule": "positive_if_score_greater_than_or_equal_to_threshold",
+            "true_positive": 290,
+            "false_positive": 134,
+            "true_negative": 6980,
+            "false_negative": 1006,
+            "precision": 0.6839622641509434,
+            "recall": 0.22376543209876543,
+            "specificity": 0.9811639021647456,
+            "f1": 0.3372093023255814,
+            "accuracy": 0.8644470868014269,
+            "balanced_accuracy": 0.6024646671317555,
+            "matthews_correlation_coefficient": 0.33815512911975515
+          },
+          "threshold_source_split": "calibration",
+          "recalibrated_on_this_split": false
+        }
+      }
+    }
+  }
+}
