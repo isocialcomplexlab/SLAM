@@ -862,6 +862,62 @@ Table~\ref{tab:kitti05_sota_l1} and Fig.~\ref{fig:kitti05_sota_l1_curves} show t
 }
 % END KITTI05_SOTA_L1_REVISION
 
+% BEGIN KITTI05_EFFICIENCY_REVISION
+{\color{red}
+\refstepcounter{subsection}
+\subsection*{\textcolor{red}{F. Implementation-Level Efficiency}}
+\label{subsec:kitti05_efficiency}
+
+To complement the descriptor-level accuracy analysis, we measured extraction latency, exhaustive comparison latency, descriptor storage, and memory consumption for the three implementations used in the KITTI-05 baseline study. Each benchmark used a batch size of one, 20 warm-up executions, three rounds of 100 measured images, and excluded image-file reading from the timed region. ResNet-101 was executed on the CPU with four threads, ORB-SLAM2 DBoW2 on one CPU thread, and NetVLAD-512 on an NVIDIA GeForce MX150 GPU. For NetVLAD, the decomposed and complete-pipeline measurements were interleaved with a balanced order to reduce clock and thermal drift. Consequently, Table~\ref{tab:kitti05_efficiency} characterizes the evaluated implementations on the stated hardware; it must not be interpreted as a hardware-independent ranking of architectural complexity.
+
+\begin{table*}[!t]
+\color{red}
+\captionsetup{labelfont={color=red},textfont={color=red}}
+\caption{\textcolor{red}{Controlled KITTI-05 implementation-level efficiency. Extraction reports the mean end-to-end descriptor latency, while matching reports exhaustive scoring against 2,761 stored descriptors. Device and thread differences are shown explicitly.}}
+\label{tab:kitti05_efficiency}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{l l r r r r r r}
+\toprule
+Method & Extraction device & Ext. (ms) & FPS & Dim. & Storage (KiB) & Match (ms) & RSS (MiB) \\
+\midrule
+ResNet-101 ($L_2$) &
+CPU, 4 threads &
+189.08 &
+5.29 &
+4096 &
+16.00 &
+23.38 &
+1495.5 \\
+ORB-SLAM2 DBoW2 &
+CPU, 1 thread &
+13.03 &
+76.72 &
+sparse BoW &
+11.41 &
+155.75 &
+676.7 \\
+NetVLAD-512 &
+MX150 CUDA &
+1413.27 &
+0.71 &
+512 &
+2.00 &
+2.97 &
+2049.8 \\
+\bottomrule
+\multicolumn{8}{l}{\footnotesize Ext.: descriptor extraction; Match: mean exhaustive query latency at $N=2761$; RSS: peak process resident set size.} \\
+\multicolumn{8}{l}{\footnotesize ResNet-101 legacy $L_\infty$ has the same extraction, model, and descriptor-storage costs as the corrected $L_2$ formulation.} \\
+\end{tabular}
+\end{table*}
+
+Within these implementation-specific conditions, DBoW2 provided the lowest extraction latency at 13.03~ms per image (76.72~frames/s), followed by CPU ResNet-101 at 189.08~ms (5.29~frames/s). NetVLAD-512 required 1413.27~ms per image on the MX150 because its $480\times640$ pipeline includes the VGG-16 encoder, NetVLAD aggregation, and WPCA projection. Conversely, NetVLAD produced the most compact dense representation (2.00~KiB) and the lowest exhaustive comparison latency (2.97~ms per query), compared with 23.38~ms for vectorized ResNet $L_2$ and 155.75~ms for direct sparse DBoW2 scoring.
+
+The model-footprint measurements further distinguish storage from runtime memory. ResNet-101 contained 44.55 million parameters and 170.34~MiB of model tensors, whereas NetVLAD-512 contained 18.93 million parameters and 72.20~MiB of model tensors, with a peak CUDA allocation of 228.98~MiB. Peak process RSS also includes framework, image, vocabulary, allocator, and temporary-buffer overhead and therefore is reported as a process-level deployment measurement rather than isolated model memory. These results expose a practical trade-off: DBoW2 favors rapid CPU extraction, NetVLAD favors descriptor compactness and exhaustive matching speed, and ResNet-101 occupies an intermediate extraction regime while retaining a substantially larger descriptor than NetVLAD.
+}
+% END KITTI05_EFFICIENCY_REVISION
+
 \section{Conclusion and Future Work}
 \label{sec:concl}
 
