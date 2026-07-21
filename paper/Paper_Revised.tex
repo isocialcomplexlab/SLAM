@@ -61,6 +61,10 @@
 
 \usepackage{balance}
 \usepackage{bm}
+\usepackage{booktabs}
+\usepackage{float}
+\definecolor{RED}{rgb}{1,0,0}
+
 \makeatletter
 \AtBeginDocument{\DeclareMathVersion{bold}
 \SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
@@ -806,6 +810,58 @@ The descriptor-level audit further demonstrates why precision--recall analysis i
 \end{revisionblock}
 
 
+
+% BEGIN KITTI05_SOTA_L1_REVISION
+{\color{red}
+\refstepcounter{subsection}
+\subsection*{\textcolor{red}{E. Comparison with Place-Recognition Baselines}}
+\label{subsec:kitti05_sota_l1}
+
+To isolate descriptor quality from the temporal verification stage, we compared all methods at descriptor level ($L=1$) using exactly the same KITTI-05 candidate pairs, spatial labels, and data partitions. A positive pair has a spatial distance of at most $5$~m, pairs between $5$ and $10$~m are retained as ambiguous but excluded from binary metrics, and pairs at or above $10$~m are negative. For every method, the decision threshold was selected only on the calibration partition by maximizing the F1 score and was then frozen for the independent test and stress partitions. The comparison includes the original ResNet-101 score, the corrected flattened Euclidean score, the classical DBoW2 place-recognition model~\cite{GalvezLopez2012DBoW2} instantiated with the canonical ORB-SLAM2 vocabulary~\cite{MurArtal2017ORBSLAM2}, and a 512-dimensional NetVLAD descriptor~\cite{Arandjelovic2016NetVLAD}.
+
+\begin{table}[H]
+\centering
+\color{red}
+\captionsetup{labelfont={color=red},textfont={color=red}}
+\caption{\color{red}Descriptor-level loop-closure performance on the KITTI-05 test partition. Thresholds were calibrated exclusively on the calibration partition; ambiguous pairs were excluded from binary metrics.}
+\label{tab:kitti05_sota_l1}
+\footnotesize
+\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{lccccc}
+\toprule
+Method & ROC--AUC & AP & Precision & Recall & F1 \\
+\midrule
+ResNet-101 (legacy) & 0.731 & 0.459 & 0.643 & 0.324 & 0.431 \\
+ResNet-101 (L2) & 0.824 & 0.594 & 0.910 & 0.336 & 0.491 \\
+ORB-SLAM2 DBoW2 & 0.868 & 0.764 & \textbf{0.998} & 0.336 & 0.503 \\
+NetVLAD-512 & \textbf{0.904} & \textbf{0.848} & 0.958 & \textbf{0.771} & \textbf{0.854} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:kitti05_sota_l1} and Fig.~\ref{fig:kitti05_sota_l1_curves} show that NetVLAD-512 provides the strongest overall ranking and operating-point performance, reaching a test ROC--AUC of $0.904$, AP of $0.848$, and F1 of $0.854$. DBoW2 is substantially more conservative: it produces only one false positive on the test partition and therefore reaches a precision of $0.998$, but its recall is limited to $0.336$. The corrected ResNet-101 distance improves over the legacy score in ROC--AUC, AP, precision, and F1, confirming that descriptor geometry contributes independently of temporal verification. Nevertheless, both classical DBoW2 and learned NetVLAD outperform the corrected ResNet score in ROC--AUC and AP under the same calibration protocol.
+
+\begin{figure*}[!t]
+\centering
+\color{red}
+\captionsetup{labelfont={color=red},textfont={color=red}}
+\begin{minipage}[t]{0.485\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/kitti05_sota_l1_test_roc.pdf}
+\textcolor{red}{(a) Receiver operating characteristic.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/kitti05_sota_l1_test_pr.pdf}
+\textcolor{red}{(b) Precision--recall characteristic.}
+\end{minipage}
+\caption{\color{red}Descriptor-level comparison on the KITTI-05 test partition using continuous similarity scores. The ROC curves summarize ranking across false-positive rates, whereas the precision--recall curves emphasize performance under the imbalanced positive/negative distribution.}
+\label{fig:kitti05_sota_l1_curves}
+\end{figure*}
+}
+% END KITTI05_SOTA_L1_REVISION
+
 \section{Conclusion and Future Work}
 \label{sec:concl}
 
@@ -828,7 +884,30 @@ Future work will investigate deploying the proposed framework on physical roboti
 Although the proposed operational thresholds produced satisfactory performance in the evaluated scenarios, sensitivity to threshold variation was not systematically analyzed and should be investigated in future studies.
 
 \bibliographystyle{IEEEtran}
+% BEGIN KITTI05_SOTA_REFERENCE_COLOR_HOOK
+\makeatletter
+\let\kittiSotaOriginalBibitem\bibitem
+\renewcommand{\bibitem}[2][]{%
+  \def\kittiSotaCurrentBibKey{#2}%
+  \def\kittiSotaDbowBibKey{GalvezLopez2012DBoW2}%
+  \def\kittiSotaNetvladBibKey{Arandjelovic2016NetVLAD}%
+  \ifx\kittiSotaCurrentBibKey\kittiSotaDbowBibKey
+    \color{red}%
+  \else\ifx\kittiSotaCurrentBibKey\kittiSotaNetvladBibKey
+    \color{red}%
+  \else
+    \color{black}%
+  \fi\fi
+  \if\relax\detokenize{#1}\relax
+    \kittiSotaOriginalBibitem{#2}%
+  \else
+    \kittiSotaOriginalBibitem[#1]{#2}%
+  \fi
+}
+\makeatother
+% END KITTI05_SOTA_REFERENCE_COLOR_HOOK
 \bibliography{references_revised}
+\color{black}
 
 \begin{IEEEbiographynophoto}{Fabiana Naomi Iegawa} received a BSc in Control and Automation Engineering in 2018 from the Mauá School of Engineering (São Caetano do Sul/São Paulo, Brazil) and completed her MSc in Computer Science in 2023 at the Federal University of ABC (UFABC). She has expertise in Control and Automation Engineering, with a focus on EEG-Based Control Systems. Her projects include developing Human-Robot Interaction using Brain-Computer Interfaces (BCI). During her Master's, she worked on SLAM, Image Processing, and Convolutional Neural Networks (CNN) for Loop Closure detection in autonomous robot navigation. She also has experience in Machine Learning Engineering in the financial and retail sectors, with skills in predictive and prescriptive modeling, model governance, and MLOps pipeline design. The author received the Best Student Paper Award at the Information Technology: New Generation (ITNG) in 2024.
 \end{IEEEbiographynophoto}
