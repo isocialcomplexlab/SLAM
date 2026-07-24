@@ -63,6 +63,7 @@
 \usepackage{bm}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{placeins}
 \definecolor{RED}{rgb}{1,0,0}
 
 \makeatletter
@@ -917,6 +918,62 @@ Within these implementation-specific conditions, DBoW2 provided the lowest extra
 The model-footprint measurements further distinguish storage from runtime memory. ResNet-101 contained 44.55 million parameters and 170.34~MiB of model tensors, whereas NetVLAD-512 contained 18.93 million parameters and 72.20~MiB of model tensors, with a peak CUDA allocation of 228.98~MiB. Peak process RSS also includes framework, image, vocabulary, allocator, and temporary-buffer overhead and therefore is reported as a process-level deployment measurement rather than isolated model memory. These results expose a practical trade-off: DBoW2 favors rapid CPU extraction, NetVLAD favors descriptor compactness and exhaustive matching speed, and ResNet-101 occupies an intermediate extraction regime while retaining a substantially larger descriptor than NetVLAD.
 }
 % END KITTI05_EFFICIENCY_REVISION
+
+
+\subsection{\textcolor{red}{G. Controlled ViT-B/16 Descriptor Ablation}}
+
+\textcolor{red}{A controlled ViT-B/16 ablation was conducted to separate the historical two-region classification-logit descriptor from internal transformer representations \cite{Dosovitskiy2021ViT}. The historical configuration preserves the direct notebook output and its Euclidean matching semantics: the two 1000-dimensional regional classification outputs are concatenated into a 2000-dimensional descriptor. The new controlled variants concatenate the two 768-dimensional regional embeddings obtained from transformer block 5 or block 11 using either the CLS token or patch-mean pooling, resulting in 1536-dimensional descriptors. Continuous scores are the negative Euclidean distance. Thresholds were selected exclusively on the calibration split by maximum F1 and were then frozen for test and stress; the fixed thresholds used by the historical notebooks were not reused, and ambiguous pairs were excluded from binary evaluation.}
+
+\textcolor{red}{Figure~\ref{fig:vit_descriptor_ablation} and Table~\ref{tab:vit_descriptor_ablation} show that intermediate transformer representations are substantially more suitable for loop-closure ranking than the historical classification-logit output. On the test split, intermediate CLS pooling obtained the best ROC-AUC (0.8783), AP (0.7712), and F1 (0.7344), improving over historical logits by 0.0681, 0.2085, and 0.2474, respectively. Intermediate patch-mean pooling was close in threshold-free ranking, with ROC-AUC 0.8780 and AP 0.7601, but produced a lower frozen-threshold F1 of 0.6960.}
+
+\textcolor{red}{Under stress, intermediate CLS remained best in ROC-AUC (0.7207) and F1 (0.5561), whereas intermediate patch-mean pooling achieved the highest AP (0.5747). The final patch-mean representation was more conservative: its test precision was 0.8333 with recall 0.5359, and its stress precision was 0.7312 with recall 0.3148. These results indicate that intermediate tokens retain place-discriminative information more effectively than the final classification output. Because the controlled ablation currently covers only KITTI sequence 05, this interpretation is limited to the evaluated dataset and split protocol.}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.99\textwidth]{Figures/vit_ablation_composite_v2_1.pdf}
+    \caption{\textcolor{red}{Controlled ViT-B/16 descriptor ablation on KITTI sequence 05: (a) test ROC, (b) test precision--recall, (c) stress ROC, and (d) stress precision--recall. Historical logits denote the two-region classification-logit descriptor recovered from the legacy notebooks; intermediate and final CLS/patch-mean variants are new controlled internal-token ablations. Thresholds were selected by maximum F1 on the calibration split and frozen for test and stress. Ambiguous pairs were excluded from binary evaluation.}}
+    \label{fig:vit_descriptor_ablation}
+\end{figure*}
+
+\begin{table*}[t]
+    \centering
+    \caption{\textcolor{red}{Controlled ViT-B/16 descriptor ablation on KITTI sequence 05. The best value in each metric column is shown in bold.}}
+    \label{tab:vit_descriptor_ablation}
+    {\color{red}
+    \setlength{\tabcolsep}{3.5pt}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llllcccccc}
+        \toprule
+        Descriptor & Token source & Pooling & Dim. &
+        \multicolumn{3}{c}{Test} &
+        \multicolumn{3}{c}{Stress} \\
+        \cmidrule(lr){5-7}\cmidrule(lr){8-10}
+        & & & & ROC-AUC & AP & F1 & ROC-AUC & AP & F1 \\
+        \midrule
+        Historical logits & Classification logits & Model output & 2000 &
+        0.8102 & 0.5627 & 0.4870 & 0.6212 & 0.4132 & 0.3758 \\
+        Intermediate CLS & Block 5 & CLS & 1536 &
+        \textbf{0.8783} & \textbf{0.7712} & \textbf{0.7344} &
+        \textbf{0.7207} & 0.5673 & \textbf{0.5561} \\
+        Intermediate patch mean & Block 5 & Patch mean & 1536 &
+        0.8780 & 0.7601 & 0.6960 & 0.7194 &
+        \textbf{0.5747} & 0.5508 \\
+        Final CLS & Block 11 & CLS & 1536 &
+        0.8376 & 0.6442 & 0.5608 & 0.6306 & 0.4469 & 0.4057 \\
+        Final patch mean & Block 11 & Patch mean & 1536 &
+        0.8550 & 0.7098 & 0.6523 & 0.6691 & 0.4832 & 0.4401 \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \vspace{2pt}
+
+    \footnotesize Historical logits preserve the legacy notebook descriptor and matching semantics. Intermediate/final CLS and patch-mean rows are new controlled internal-token ablations. The evaluation is restricted to KITTI sequence 05.
+    }
+\end{table*}
+
+\FloatBarrier
+
+\raggedbottom
 
 \section{Conclusion and Future Work}
 \label{sec:concl}
