@@ -712,6 +712,27 @@ In (e) Adapted and Fine-Tuned VGG-16, the F1-score of 0.361 in Table \ref{tab:se
 
 In Group 5, the Adapted and Fine-Tuned VGG-16 achieved the best results for Loop Closure Detection, demonstrating the best performance in real-world outdoor environments. In Group 8, ResNet performed the best. In this group, it was found that the opposite direction affected the performance in detecting Loop Closure. These results suggest that opposite traversal directions affect descriptor consistency, particularly for architectures not explicitly optimized for viewpoint invariance.
 
+
+\pagebreak[4]
+
+To assess controlled cross-sequence transfer, we applied the fixed ResNet-101 descriptor pipeline to KITTI 08 using thresholds calibrated only on KITTI 05; no KITTI 08 recalibration was performed. On the KITTI 08 test split, legacy exact and corrected L2 obtained ROC-AUC values of 0.536 and 0.485, with frozen-threshold recall of 0.0055 and 0.0051, respectively (Table~\ref{tab:kitti08_cross_sequence_transfer}). Average precision values of 0.0569 and 0.0522 were near the 0.0524 positive prevalence, and the corrected-L2 advantage observed on KITTI 05 did not persist. The positive-only stress split yielded recall of 0.0165 and 0.0000 and is treated only as a sensitivity diagnostic. These results indicate a sequence/domain generalization limitation of the fixed descriptor-and-threshold pipeline without identifying its specific cause.
+
+\begin{table*}[t]
+\centering
+\caption{Controlled cross-sequence transfer from KITTI 05 to KITTI 08 using fixed ResNet-101 descriptors. Thresholds calibrated on the KITTI 05 calibration split are frozen on KITTI 08; $\Delta$ denotes KITTI 08 minus KITTI 05. Ambiguous pairs are excluded from binary metrics, and the positive-only KITTI 08 stress split reports recall only.}
+\label{tab:kitti08_cross_sequence_transfer}
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+\hline
+Method & \shortstack{KITTI 05\\test AUC} & \shortstack{KITTI 08\\test AUC} & $\Delta$AUC & \shortstack{KITTI 05\\test recall} & \shortstack{KITTI 08\\test recall} & $\Delta$recall & \shortstack{KITTI 08\\stress recall} \\
+\hline
+Legacy exact & 0.7305 & 0.5357 & -0.1948 & 0.3239 & 0.0055 & -0.3184 & 0.0165 \\
+Corrected L2 & 0.8245 & 0.4852 & -0.3393 & 0.3365 & 0.0051 & -0.3314 & 0.0000 \\
+\hline
+\end{tabular*}
+\end{table*}
+
 \subsection{TUM}
 
 The research group at the Technical University of Munich (TUM) provides datasets for Computer Vision, Image Processing, and Pattern Recognition. One of these datasets is Monocular Visual Odometry, which contains 50 groups of sequential images captured in various real-world indoor and outdoor environments. The dataset also includes monocular image sequences under varying camera motion and rotational conditions. 
