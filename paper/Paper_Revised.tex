@@ -555,7 +555,6 @@ Stress & Corrected $L_2$ & 0.608 & 0.393 & 0.393 & 0.337 \\
 \small
 
 % R2-M2 controlled preprocessing ablation (candidate patch)
-\begin{revisionblock}
 For KITTI 05 and KITTI 08, the split-left/right and full-image preprocessing
 modes were evaluated on identical pair identities. The corrected-L2 operating
 threshold for each preprocessing mode was selected using that mode's
@@ -576,7 +575,6 @@ improvements were entirely above zero. KITTI 08 showed no comparable
 held-out ranking advantage: ROC-AUC changed from 0.485 to 0.494 and average
 precision from 0.052 to 0.050, with both paired bootstrap confidence
 intervals crossing zero.
-\end{revisionblock}
 
 To separate descriptor discrimination from temporal verification, we evaluated one query descriptor against strict windows of $L\in\{1,2,3,5\}$ consecutive reference frames. The continuous window score is the minimum constituent similarity score, equivalently the negative maximum constituent distance. A window is positive only when all $L$ geometric pairs are positive; windows containing any ambiguous pair are excluded from binary metrics. A distinct threshold is calibrated for each method and each $L$ exclusively on the calibration event and is then frozen for the held-out test and stress events.
 \end{revisionblock}
