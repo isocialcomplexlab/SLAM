@@ -188,6 +188,18 @@ Fig. \ref{fig:Fig1} illustrates the investigated evaluation framework for \circl
 	\centering
 	\includegraphics[width=\linewidth]{./Figures/Fig_1.png}
 	\caption{Steps to Detect the Loop Closure.}
+
+% R2-M2 preprocessing-ablation clarification (candidate patch)
+To evaluate the effect of the historical left/right image-splitting strategy,
+we additionally considered a full-image preprocessing mode. The two
+configurations are treated as complete preprocessing pipelines because the
+historical split mode concatenates descriptors from the two image halves,
+whereas the full-image mode produces a single descriptor. Therefore, this
+ablation evaluates the practical preprocessing pipeline rather than claiming
+a perfectly isolated crop-only intervention. The historical splitting
+strategy is motivated by Garg et al.~\cite{Garg2018DontLookBack}; its
+empirical validity is assessed by the controlled ablation reported below.
+
 	\label{fig:Fig1}
 \end{figure*}
 
@@ -539,6 +551,29 @@ Stress & Corrected $L_2$ & 0.608 & 0.393 & 0.393 & 0.337 \\
 
 \begin{revisionblock}
 \small
+
+% R2-M2 controlled preprocessing ablation (candidate patch)
+For KITTI 05 and KITTI 08, the split-left/right and full-image preprocessing
+modes were evaluated on identical pair identities. The corrected-L2 operating
+threshold for each preprocessing mode was selected using that mode's
+calibration split only and was then applied to the corresponding held-out test
+split. Paired bootstrap confidence intervals were computed for the
+full-image-minus-split differences in ROC-AUC and average precision. The
+KITTI 08 stress subset contains no negative binary pairs and is therefore
+limited to recall/sensitivity-compatible measures. TUM19 was evaluated with
+threshold-free retrieval/spatial measures; these values are reported
+separately and are not numerically pooled with the KITTI classification
+metrics.
+
+On TUM19, full-image processing reduced the mean top-1 spatial error from
+0.189~m to 0.142~m and increased MRR from 0.020 to 0.056. On KITTI 05,
+held-out ROC-AUC increased from 0.824 to 0.851 and average precision from
+0.594 to 0.677; the paired bootstrap 95\% confidence intervals for the two
+improvements were entirely above zero. KITTI 08 showed no comparable
+held-out ranking advantage: ROC-AUC changed from 0.485 to 0.494 and average
+precision from 0.052 to 0.050, with both paired bootstrap confidence
+intervals crossing zero.
+
 To separate descriptor discrimination from temporal verification, we evaluated one query descriptor against strict windows of $L\in\{1,2,3,5\}$ consecutive reference frames. The continuous window score is the minimum constituent similarity score, equivalently the negative maximum constituent distance. A window is positive only when all $L$ geometric pairs are positive; windows containing any ambiguous pair are excluded from binary metrics. A distinct threshold is calibrated for each method and each $L$ exclusively on the calibration event and is then frozen for the held-out test and stress events.
 \end{revisionblock}
 
@@ -948,6 +983,16 @@ The model-footprint measurements further distinguish storage from runtime memory
 \textcolor{red}{Figure~\ref{fig:vit_descriptor_ablation} and Table~\ref{tab:vit_descriptor_ablation} show that intermediate transformer representations are substantially more suitable for loop-closure ranking than the historical classification-logit output. On the test split, intermediate CLS pooling obtained the best ROC-AUC (0.8783), AP (0.7712), and F1 (0.7344), improving over historical logits by 0.0681, 0.2085, and 0.2474, respectively. Intermediate patch-mean pooling was close in threshold-free ranking, with ROC-AUC 0.8780 and AP 0.7601, but produced a lower frozen-threshold F1 of 0.6960.}
 
 \textcolor{red}{Under stress, intermediate CLS remained best in ROC-AUC (0.7207) and F1 (0.5561), whereas intermediate patch-mean pooling achieved the highest AP (0.5747). The final patch-mean representation was more conservative: its test precision was 0.8333 with recall 0.5359, and its stress precision was 0.7312 with recall 0.3148. These results indicate that intermediate tokens retain place-discriminative information more effectively than the final classification output. Because the controlled ablation currently covers only KITTI sequence 05, this interpretation is limited to the evaluated dataset and split protocol.}
+
+
+% R2-M2 preprocessing-ablation interpretation (candidate patch)
+These results do not support a universal preference for either preprocessing
+mode. Full-image processing was clearly advantageous on TUM19 and KITTI 05,
+whereas KITTI 08 showed no clear held-out ranking advantage for either mode.
+The effect of image preprocessing should therefore be regarded as
+dataset-dependent. Accordingly, the left/right splitting strategy is retained
+as a historically motivated design choice rather than presented as a
+universally beneficial preprocessing rule.
 
 \begin{figure*}[t]
     \centering
