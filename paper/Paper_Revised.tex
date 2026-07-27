@@ -747,7 +747,9 @@ The F1-score in Table \ref{tab:seq_loop_08} indicates that (c) ResNet achieved t
 
 In (e) Adapted and Fine-Tuned VGG-16, the F1-score of 0.361 in Table \ref{tab:seq_loop_08} indicates limited Precision and Recall, primarily because the FN (212) and FP (185) values are relatively high compared with the TP value (112) shown in Table \ref{tab:mc_kitti08}. In this case, Loop Closure Detection was identified, but its performance was worse than in (c) ResNet due to the lower TP value.
 
-In Group 5, the Adapted and Fine-Tuned VGG-16 achieved the best results for Loop Closure Detection, demonstrating the best performance in real-world outdoor environments. In Group 8, ResNet performed the best. In this group, it was found that the opposite direction affected the performance in detecting Loop Closure. These results suggest that opposite traversal directions affect descriptor consistency, particularly for architectures not explicitly optimized for viewpoint invariance.
+\begin{revisionblock}
+In Group 5, the Adapted and Fine-Tuned VGG-16 achieved the best results for Loop Closure Detection within that evaluated sequence. In Group 8, ResNet achieved the best F1-score among the evaluated architectures. In this sequence, opposite traversal was associated with reduced descriptor consistency. Because the study did not perform a controlled internal-representation analysis for each architecture, these condition-specific differences should not be interpreted as evidence of a specific architectural cause.
+\end{revisionblock}
 
 
 \pagebreak[4]
@@ -854,7 +856,11 @@ The Adapted and Fine-Tuned VGG-16 achieved improved Loop Closure Detection perfo
 
 \subsection{Comparative Discussions}
 
-The experimental results indicate that descriptor performance varies across operational conditions and representation learning strategies. The Adapted and Fine-Tuned VGG-16 achieved superior performance under stable viewpoint conditions, suggesting that task-specific fine-tuning improved descriptor discriminability for Loop Closure Detection. In contrast, ResNet demonstrated greater robustness under opposite traversal conditions, possibly benefiting from the improved feature generalization enabled by residual learning.
+\begin{revisionblock}
+The experimental results indicate that descriptor performance varies across operational conditions and representation-learning strategies. The Fine-Tuned VGG-16 showed its strongest relative behavior under stable-viewpoint conditions, whereas ResNet showed stronger performance under opposite-traversal conditions in the evaluated sequences. These condition-specific differences are empirical observations and are not attributed here to a single internal architectural mechanism. Architecturally, residual connections are a defining property of ResNet \cite{He2016ResNet}, while VGG-16 uses a stacked convolutional hierarchy \cite{Simonyan2015VGG}; these properties provide interpretive context, but the present experiments do not establish either property as the cause of the measured performance differences.
+
+A new internal representation-level comparison (e.g., layer-wise activations, t-SNE, or Grad-CAM) between ResNet-101 and the Fine-Tuned VGG-16 used for the reported experiments could not be reproduced faithfully because the original trained Fine-Tuned VGG-16 checkpoint is no longer available, and no exactly alignable frozen outputs from that model were recovered. Replacing it with an ImageNet-only or newly retrained VGG-16 would change the model underlying the historical results. We therefore treat architecture-based explanations as hypotheses rather than experimentally established causes. This limitation concerns reproducibility of new internal analyses and does not alter the identity or terminology of the Fine-Tuned VGG-16 implementation used in the original experiments.
+\end{revisionblock}
 
 The Transformer-based architecture showed limited robustness across the evaluated scenarios. One possible explanation is that the pretrained Vision Transformer was not specifically optimized for Visual Place Recognition tasks, resulting in descriptor representations that are less invariant to viewpoint and appearance changes.
 
@@ -1052,7 +1058,9 @@ The experimental results reinforce that viewpoint variations, opposite traversal
 
 The proposed framework was used to comparatively evaluate CNN- and Transformer-based visual descriptors using standardized preprocessing and descriptor-matching procedures across the KITTI and TUM datasets. The experiments enabled a comparative assessment of descriptor behavior under stable viewpoints, opposite traversal directions, and camera rotation conditions. Because Loop Closure Detection is an imbalanced classification problem, the analysis emphasized F1-score and AUC in addition to Accuracy, providing a more reliable assessment of descriptor performance. 
 
-The experimental results indicate that descriptor performance varies across operational conditions and representation-learning strategies. Among the evaluated architectures, the Adapted and Fine-Tuned VGG-16 achieved the best performance under relatively stable viewpoint conditions and showed improved descriptor discriminability across the evaluated scenarios. ResNet exhibited improved performance under opposite-traversal conditions, suggesting greater tolerance to changes in traversal direction. The experiments also indicate that camera rotations reduced descriptor consistency, increasing FP and FN rates during descriptor matching and decreasing overall detection reliability.
+\begin{revisionblock}
+The experimental results indicate that descriptor performance varies across operational conditions and representation-learning strategies. Among the evaluated architectures, the Adapted and Fine-Tuned VGG-16 achieved the best performance under relatively stable viewpoint conditions and showed improved descriptor discriminability across the evaluated scenarios. ResNet exhibited improved performance under opposite-traversal conditions in the evaluated sequence; this is reported as a condition-specific empirical difference rather than evidence of a particular internal architectural mechanism. The experiments also indicate that camera rotations reduced descriptor consistency, increasing FP and FN rates during descriptor matching and decreasing overall detection reliability.
+\end{revisionblock}
 
 This work contributes a comparative evaluation framework for Loop Closure Detection in Visual SLAM using CNN- and Transformer-based visual descriptors under unified experimental conditions. The study also provides an experimental analysis of descriptor behavior under viewpoint variation, opposite traversal directions, and camera rotations using the KITTI and TUM datasets. Publicly available datasets, pretrained models, and standardized evaluation metrics were adopted to support reproducibility and future comparative studies.
 
