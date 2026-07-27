@@ -371,15 +371,22 @@ To evaluate the Loop Closure Detection system described in Section \ref{sec:Loop
 
 \begin{figure*}[!t]
 \centering
-\begin{tabular}{c}
-\includegraphics[width=\linewidth]{./Figures/Fig_3a.png} \\
-(a) \\[0.1cm]
-\includegraphics[width=\linewidth]{./Figures/Fig_7a.png} \\
-(b)\\[0.1cm]
-\includegraphics[width=\linewidth]{./Figures/Fig_9a.png} \\
-(c)
-\end{tabular}
-\caption{Image Sequence from (a) Group 5 and (b) Group 8 of the KITTI dataset, and (c) Group 10 of the TUM Dataset.}
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{./Figures/Fig_3a.png}
+\textcolor{red}{(a)}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{./Figures/Fig_7a.png}
+\textcolor{red}{(b)}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{./Figures/Fig_9a.png}
+\textcolor{red}{(c)}
+\end{minipage}
+\caption{\protect\revisioncaption{Representative image sequences from (a) KITTI Group 5, (b) KITTI Group 8, and (c) the evaluated TUM sequence. The three sequences are consolidated into one compact horizontal panel to reduce figure space while preserving the visual comparison.}}
 \label{fig:kitti_tum_seq}
 \end{figure*}
 
@@ -631,7 +638,7 @@ $L$ & Method & ROC-AUC & AP & F1 \\
 
 \begin{revisionblock}
 \small
-The corrected descriptor achieved its highest test ROC-AUC at $L=2$ (0.824784), but the increase over $L=1$ was only +0.000286. In contrast, AP changed from 0.593918 at $L=1$ to 0.587019 at $L=2$ (-0.006899), while F1 changed from 0.491369 to 0.489590 (-0.001779). Longer strict windows degraded both ranking and operating-point performance: at $L=5$, AP and F1 decreased by -0.063165 and -0.050841, respectively, relative to $L=1$. Therefore, the original three-match rule is not treated as an intrinsic property of the descriptor. Descriptor-level performance is reported at $L=1$, and temporal verification is reported separately as an ablation.
+The corrected descriptor achieved its highest test ROC-AUC at $L=2$ (0.824784), but the increase over $L=1$ was only +0.000286. In contrast, AP changed from 0.593918 at $L=1$ to 0.587019 at $L=2$ (-0.006899), while F1 changed from 0.491369 to 0.489590 (-0.001779). Longer strict windows degraded both ranking and operating-point performance: at $L=5$, AP and F1 decreased by -0.063165 and -0.050841, respectively, relative to $L=1$. The corresponding test AP and F1 trends across $L\in\{1,2,3,5\}$ are shown in Figs.~\ref{fig:kitti05_resnet_temporal_ap} and~\ref{fig:kitti05_resnet_temporal_f1}, respectively. Therefore, the original three-match rule is not treated as an intrinsic property of the descriptor. Descriptor-level performance is reported at $L=1$, and temporal verification is reported separately as an ablation.
 \end{revisionblock}
 % END REVISION: TEMPORAL ABLATION L1235
 
